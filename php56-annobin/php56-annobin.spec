@@ -12,10 +12,6 @@ License: GPLv3+
 
 #---------------------------------------------------------------------------------
 
-BuildRequires: annobin
-
-#---------------------------------------------------------------------------------
-
 Source0:  https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-10-annobin-9.23-4.el7.1.x86_64.rpm
 Source1:  https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-10-annobin-annocheck-9.23-4.el7.1.x86_64.rpm
 
