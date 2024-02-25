@@ -5,7 +5,7 @@
 # http://creativecommons.org/licenses/by-sa/4.0/
 #
 # Please, preserve the changelog entries
-#
+# 
 %global scl_name_base    php
 %global scl_name_version 56
 %global scl              %{scl_name_base}%{scl_name_version}
