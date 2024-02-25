@@ -17,7 +17,7 @@ BuildRequires:  rpm-devel
 BuildRequires:  libcmocka libcmocka-devel environment-modules
 Requires:   %{_bindir}/modulecmd
 
-Patch1:     https://github.com/andykimpe/scl-php56/raw/master/0003-Scl-utils-layout-patch-from-fedora-famillecollet.com.patch
+Patch1:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0003-Scl-utils-layout-patch-from-fedora-famillecollet.com.patch
 Patch2:     https://github.com/andykimpe/scl-php56/raw/master/BZ-2056462-do-not-error-out-on-SIGINT.patch
 Patch3:     https://github.com/andykimpe/scl-php56/raw/master/BZ-2091000-remove-tmp-file.patch
 Patch4:     https://github.com/andykimpe/scl-php56/raw/master/rpm419.patch
