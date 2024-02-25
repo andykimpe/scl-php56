@@ -10,18 +10,21 @@ Summary:    Utilities for alternative packaging
 License:    GPLv2+
 URL:        https://github.com/sclorg/scl-utils
 Source0:    https://github.com/sclorg/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
-Source1:    macros.scl-filesystem
+Source1:    https://github.com/andykimpe/scl-php56/raw/master/macros.scl-filesystem
 BuildRequires:	gcc make
 BuildRequires:  cmake
 BuildRequires:  rpm-devel
 BuildRequires:  libcmocka libcmocka-devel environment-modules
 Requires:   %{_bindir}/modulecmd
 
-Patch1:     0003-Scl-utils-layout-patch-from-fedora-famillecollet.com.patch
-Patch2:     BZ-2056462-do-not-error-out-on-SIGINT.patch
-Patch3:     BZ-2091000-remove-tmp-file.patch
-Patch4:     rpm419.patch
-Patch5:     brp-python-hardlink.patch
+Patch1:     https://github.com/andykimpe/scl-php56/raw/master/0003-Scl-utils-layout-patch-from-fedora-famillecollet.com.patch
+Patch2:     https://github.com/andykimpe/scl-php56/raw/master/BZ-2056462-do-not-error-out-on-SIGINT.patch
+Patch3:     https://github.com/andykimpe/scl-php56/raw/master/BZ-2091000-remove-tmp-file.patch
+Patch4:     https://github.com/andykimpe/scl-php56/raw/master/rpm419.patch
+# commit https://patch-diff.githubusercontent.com/raw/sclorg/scl-utils/pull/43
+# patch
+# https://patch-diff.githubusercontent.com/raw/sclorg/scl-utils/pull/43.patch
+Patch5:     https://github.com/andykimpe/scl-php56/raw/master/brp-python-hardlink.patch
 
 %description
 Run-time utility for alternative packaging.
