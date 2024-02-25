@@ -36,7 +36,7 @@ Release:       1%{?dist}
 Group:         Development/Languages
 License:       GPL-2.0-or-later
 
-Source0:       https://github.com/andykimpe/scl-php56/raw/master/macros-build
+Source0:       https://github.com/andykimpe/scl-php56/raw/master/php56/macros-build
 Source1:       https://github.com/andykimpe/scl-php56/raw/master/README
 Source2:       https://github.com/andykimpe/scl-php56/raw/master/LICENSE
 
