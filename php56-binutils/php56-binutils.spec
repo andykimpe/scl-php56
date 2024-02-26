@@ -119,7 +119,7 @@ exit 0
 %postun -p /sbin/ldconfig
 
 
-%files -f binutils.lang
+%files
 %defattr(-,root,root,-)
 #%license COPYING COPYING3 COPYING3.LIB COPYING.LIB
 #%doc README
