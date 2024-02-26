@@ -8,6 +8,7 @@
 # For DTS-7 on RHEL-6 we only support x86 and x86_64.
 # For DTS-7 on RHEL-7 we also support ppc64, ppc64le, s390x and aarch64
 %global debug_package %{nil}
+%global __brp_check_rpaths %{nil}
 %global _scl_prefix    /opt
 
 %{?scl:%{?scl_package:%scl_package binutils}}
