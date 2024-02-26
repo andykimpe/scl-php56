@@ -150,24 +150,6 @@ Essential RPM build macros for alternative packaging.
 
 %build
 %if 0%{?rhel} == 6
-echo "rhel 6"
-echo "sleep 170000"
-sleep 170000s
-%endif
-%if 0%{?rhel} == 7
-echo "rhel7"
-echo "sleep 170000"
-sleep 170000s
-%endif
-%if 0%{?fedora} > 36 || 0%{?rhel} > 7
-echo "new"
-echo "sleep 170000"
-sleep 170000s
-%endif
-
-
-
-%if 0%{?rhel} == 6
 make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
 %endif
 %if 0%{?rhel} == 7
@@ -177,13 +159,6 @@ make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
 %cmake .
 make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
 %endif
-
-
-
-
-
-
-
 
 %install
 
