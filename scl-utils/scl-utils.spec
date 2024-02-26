@@ -41,7 +41,7 @@ Source5:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-201
 Source6:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
 Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
 %endif
-Patch1:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0003-Scl-utils-layout-patch-from-fedora-famillecollet.com.patch
+Patch1:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0003-Scl-utils-layout-patch-from-fedora-famillecollet.com.patch
 Patch2:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/BZ-2056462-do-not-error-out-on-SIGINT.patch
 Patch3:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/BZ-2091000-remove-tmp-file.patch
 Patch4:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/rpm419.patch
