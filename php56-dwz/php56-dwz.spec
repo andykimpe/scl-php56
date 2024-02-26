@@ -32,8 +32,8 @@ mkdir -p %{buildroot}
 cd %{buildroot}
 rpm2cpio %{SOURCE0} | cpio -idmv
 rpm2cpio %{SOURCE1} | cpio -idmv
-mkdir -p %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/
-cp -R %{buildroot}/opt/rh/devtoolset-7/root/* %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/
+mkdir -p %{buildroot}/opt/php56/root/
+cp -R %{buildroot}/opt/rh/devtoolset-7/root/* %{buildroot}/opt/php56/root/
 rm -rf %{buildroot}/opt/rh/
 
 
