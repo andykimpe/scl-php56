@@ -126,32 +126,19 @@ exit 0
 
 %files
 %defattr(-,root,root,-)
-#%license COPYING COPYING3 COPYING3.LIB COPYING.LIB
-#%doc README
-%{_bindir}/*
-#%if "%{build_gold}" == "both"
-#%{_bindir}/%{?cross}ld.*
-#%ghost %{_bindir}/%{?cross}ld
-#%else
-#%endif
-%{_mandir}/man1/*
-#%if %{enable_shared}
-%{_libdir}/lib*.so
-%exclude %{_libdir}/libbfd.so
-%exclude %{_libdir}/libopcodes.so
-#%endif
-#
-#%if %{isnative}
-#%if %{with docs}
-%{_infodir}/*
-#%endif
+%{_scl_prefix}/%{scl_prefix}/root/usr/bin/*
+%{_scl_prefix}/%{scl_prefix}/root/usr/share/man/man1/*
+%{_scl_prefix}/%{scl_prefix}/root/usr/lib64/lib*.so
+%exclude %{_scl_prefix}/%{scl_prefix}/root/usr/lib64/libbfd.so
+%exclude %{_scl_prefix}/%{scl_prefix}/root/usr/lib64/libopcodes.so
+%{_scl_prefix}/%{scl_prefix}/root/usr/share/info/*
 
 %files devel
 %defattr(-,root,root,-)
-%{_prefix}/include/*
-%{_libdir}/lib*.a
-%{_libdir}/libbfd.so
-%{_libdir}/libopcodes.so
+%{_scl_prefix}/%{scl_prefix}/root/usr/include/*
+%{_scl_prefix}/%{scl_prefix}/root/usr/lib64/lib*.a
+%{_scl_prefix}/%{scl_prefix}/root/usr/lib64/libbfd.so
+%{_scl_prefix}/%{scl_prefix}/root/usr/lib64/libopcodes.so
 #%if %{with docs}
 #%endif # with docs
 #%endif # %{isnative}
