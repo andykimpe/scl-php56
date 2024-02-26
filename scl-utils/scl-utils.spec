@@ -10,8 +10,8 @@ Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-201
 Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
 Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
 Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
-Source4:    https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
-Source5:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
+Source4:	https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
+Source5:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
 Source6:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
 Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
 %endif
@@ -23,8 +23,8 @@ Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-201
 Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
 Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
 Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
-Source4:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
-Source5:    https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
+Source4:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
+Source5:	https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
 Source6:	hhttps://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
 Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
 %endif
@@ -32,12 +32,12 @@ Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-
 Epoch:      1
 Version:    2.0.3
 Release:    7%{?dist}
-Source0:    https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
-Source1:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
+Source0:	https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
+Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
 Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
 Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
-Source4:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
-Source5:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
+Source4:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
+Source5:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
 Source6:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
 Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
 %endif
