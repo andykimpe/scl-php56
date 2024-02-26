@@ -7,44 +7,10 @@
 
 # For DTS-7 on RHEL-6 we only support x86 and x86_64.
 # For DTS-7 on RHEL-7 we also support ppc64, ppc64le, s390x and aarch64
+%global debug_package %{nil}
+%global _scl_prefix    /opt
 
 %{?scl:%{?scl_package:%scl_package binutils}}
-
-%if 0%{!?binutils_target:1}
-%define binutils_target %{_target_platform}
-%define isnative 1
-%define enable_shared 1
-%else
-%define cross %{binutils_target}-
-%define isnative 0
-%define enable_shared 0
-%endif
-# Disable deterministic archives by default.
-# This is for package builders who do not want to have to change
-# their build scripts to work with deterministic archives.
-%define enable_deterministic_archives 0
-# BZ 1342618: Enable support for GCC LTO compilation.
-%define enable_lto 1
-# Disable the default generation of compressed debug sections.
-%define default_compress_debug 0
-
-# Default: Not bootstrapping.
-%bcond_with bootstrap
-# Default: Not debug
-%bcond_with debug
-# Default: Always build documentation.
-%bcond_without docs
-# Default: Always run the testsuite.
-%bcond_without testsuite
-
-%if %{with bootstrap}
-%undefine with_docs
-%undefine with_testsuite
-%endif
-
-%if %{with debug}
-%undefine with_testsuite
-%endif
 
 Summary: A GNU collection of binary utilities
 Name: %{?scl_prefix}%{?cross}binutils%{?_with_debug:-debug}
@@ -53,14 +19,8 @@ Release: 8%{?dist}.sc1
 License: GPLv3+
 Group: Development/Tools
 URL: http://sources.redhat.com/binutils
-
-# Note - the Linux Kernel binutils releases are too unstable and contain too
-# many controversial patches so we stick with the official FSF version
-# instead.
-
-Source: http://ftp.gnu.org/gnu/binutils/binutils-%{version}.tar.bz2
-
-Source2: binutils-2.19.50.0.1-output-format.sed
+Source0: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-binutils-2.28-8.el7.sc1.x86_64.rpm
+Source1: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-binutils-devel-2.28-8.el7.sc1.x86_64.rpm
 
 Patch01: binutils-2.20.51.0.2-libtool-lib64.patch
 Patch02: binutils-2.20.51.0.10-ppc64-pie.patch
@@ -103,31 +63,6 @@ Patch23: binutils-2.28-ignore-gold-duplicates.patch
 Patch24: binutils-2.28-ppc-extra-insns.patch
 # Add support for displaying new DWARF5 tags including DW_AT_export_symbols.
 Patch25: binutils-2.28-DW_AT_export_symbols.patch
-
-Provides: bundled(libiberty)
-
-%define gold_arches %ix86 x86_64 %arm aarch64
-
-%if %{with bootstrap}
-%define build_gold	no
-%else
-%ifarch %gold_arches
-%define build_gold	both
-%else
-%define build_gold	no
-%endif
-%endif
-
-%define alternatives_cmd %{!?scl:%{_sbindir}}%{?scl:%{_root_sbindir}}/alternatives
-%define alternatives_cmdline %{alternatives_cmd}%{?scl: --altdir %{_sysconfdir}/alternatives --admindir %{_scl_root}/var/lib/alternatives}
-
-%if %{with debug}
-# Define this if you want to skip the strip step and preserve debug info.
-# Useful for testing.
-%define __debug_install_post : > %{_builddir}/%{?buildsubdir}/debugfiles.list
-%define debug_package %{nil}
-%endif
-
 Buildroot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
 BuildRequires: gcc
