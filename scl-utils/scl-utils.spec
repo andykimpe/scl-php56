@@ -52,7 +52,7 @@ echo "rhel7"
 echo "sleep 6000"
 sleep 6000
 %endif
-%if 0%{?fedora} > 37 || 0%{?rhel} > 8
+%if 0%{?fedora} > 36 || 0%{?rhel} > 7
 echo "new"
 echo "sleep 6000"
 sleep 6000
