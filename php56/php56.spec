@@ -33,7 +33,7 @@
 Summary:       Package that installs PHP 5.6
 Name:          %scl_name
 Version:       5.6
-Release:       1%{?dist}
+Release:       2%{?dist}
 Group:         Development/Languages
 License:       GPL-2.0-or-later
 
