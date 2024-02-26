@@ -17,9 +17,11 @@ Exclusiveos: linux
 # but we're waiting for those to be feature-complete.
 ExclusiveArch: %{ix86} x86_64 ppc ppc64
 
-Source0: https://github.com/dyninst/dyninst/archive/v%{version}/dyninst-%{version}.tar.gz
-# Explicit version since it does not match the source version
-Source1: https://github.com/dyninst/testsuite/archive/v9.3.0/testsuite-9.3.0.tar.gz
+Source0: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-dyninst-9.3.2-3.el7.x86_64.rpm
+Source1: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-dyninst-devel-9.3.2-3.el7.x86_64.rpm
+Source2: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-dyninst-doc-9.3.2-3.el7.x86_64.rpm
+Source3: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-dyninst-static-9.3.2-3.el7.x86_64.rpm
+Source4: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-dyninst-testsuite-9.3.2-3.el7.x86_64.rpm
 
 Patch1: testsuite-9.3.0-junit-nullptr.patch
 Patch2: addrtranslate-sysv.patch
