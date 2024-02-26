@@ -56,6 +56,29 @@ Patch18:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0013-Fix
 Patch19:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0014-Add-capability-to-share-collections-using-nfs.patch
 Patch20:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl-utils-20120927-shebang.patch
 
+
+Patch21: 0001-Rename-attr-macros-so-they-are-correctly-named.patch
+Patch22: 0002-Implement-as-a-command-separator.patch
+Patch23: 0003-Mention-environment-modifying-commands-in-the-man-pa.patch
+Patch24: 0004-Check-whether-a-file-was-created-when-doing-mkstemp-.patch
+Patch25: 0005-Various-fixes-in-Provides-and-Requires-of-scl-packag.patch
+Patch26: 0006-Modified-the-behavior-of-debuginfo-generation-proces.patch
+Patch27: 0007-Changed-command-description-in-scl-man-pages.patch
+Patch28: 0008-Changed-script-paths-in-__os_install_post.patch
+Patch29: 0009-Remove-sclbuild-as-it-s-not-that-useful.patch
+Patch30: 0010-Added-capability-to-register-and-deregister-collecti.patch
+Patch31: 0011-Fix-missing-allocation-check-in-read_script_output.patch
+Patch32: 0012-Introduce-scl_dependency_generators-macro.patch
+Patch33: 0013-Add-capability-to-share-collections-using-nfs.patch
+Patch34: scl-utils-20130529-shebang.patch
+
+
+
+
+
+
+
+
 Summary:    Utilities for alternative packaging
 License:    GPLv2+
 URL:        https://github.com/sclorg/scl-utils
@@ -105,6 +128,15 @@ Essential RPM build macros for alternative packaging.
 %patch23 -p1 -b .BZ-2091000-remove-tmp-file
 %patch24 -p1 -b .rpm419
 %patch25 -p1 -b .brp-python-hardlink
+%patch26 -p1 -b .brp-python-hardlink
+%patch27 -p1 -b .brp-python-hardlink
+%patch28 -p1 -b .brp-python-hardlink
+%patch29 -p1 -b .brp-python-hardlink
+%patch30 -p1 -b .brp-python-hardlink
+%patch31 -p1 -b .brp-python-hardlink
+%patch32 -p1 -b .brp-python-hardlink
+%patch33 -p1 -b .brp-python-hardlink
+%patch34 -p1 -b .brp-python-hardlink
 %endif
 %if 0%{?fedora} > 36 || 0%{?rhel} > 7
 %setup -q -n scl-utils-%{version}
