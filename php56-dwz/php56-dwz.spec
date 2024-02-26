@@ -42,8 +42,8 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 #%doc COPYING COPYING3 COPYING.RUNTIME
-%{_bindir}/dwz
-%{_mandir}/man1/dwz.1*
+#%{_bindir}/dwz
+#%{_mandir}/man1/dwz.1*
 
 %changelog
 * Tue Jul 14 2015 Jakub Jelinek <jakub@redhat.com> 0.12-1
