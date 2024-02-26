@@ -123,19 +123,19 @@ Essential RPM build macros for alternative packaging.
 %endif
 %if 0%{?rhel} == 7
 %setup -q -n scl-utils-scl-utils-%{version}
-%patch21 -p1 -b .Rename-attr-macros-so-they-are-correctly-named
-%patch22 -p1 -b .Implement-as-a-command-separator
-%patch23 -p1 -b .Mention-environment-modifying-commands-in-the-man-pa
-%patch24 -p1 -b .Check-whether-a-file-was-created-when-doing-mkstemp
-%patch25 -p1 -b .Various-fixes-in-Provides-and-Requires-of-scl-packag
-%patch26 -p1 -b .Modified-the-behavior-of-debuginfo-generation-proces
-%patch27 -p1 -b .Changed-command-description-in-scl-man-pages
-%patch28 -p1 -b .Changed-script-paths-in-__os_install_post
-%patch29 -p1 -b .Remove-sclbuild-as-it-s-not-that-useful
-%patch30 -p1 -b .Added-capability-to-register-and-deregister-collecti
-%patch31 -p1 -b .Fix-missing-allocation-check-in-read_script_output
-%patch32 -p1 -b .Introduce-scl_dependency_generators-macro
-%patch33 -p1 -b .Add-capability-to-share-collections-using-nfs
+%patch21 -p1 -b .attr-names
+%patch22 -p1 -b .command-separator
+%patch23 -p1 -b .env-variables-man
+%patch24 -p1 -b .coverity-mkstemp
+%patch25 -p1
+%patch26 -p1 
+%patch27 -p1
+%patch28 -p1
+%patch29 -p1
+%patch30 -p1
+%patch31 -p1
+%patch32 -p1
+%patch33 -p1
 %patch34 -p1 -b .shebang
 %endif
 %if 0%{?fedora} > 36 || 0%{?rhel} > 7
