@@ -70,8 +70,8 @@ hardening options.
 rm -rf %{buildroot}
 mkdir -p %{buildroot}
 cd %{buildroot}
-rpm2cpio %{Source0} | cpio -idmv
-rpm2cpio %{Source1} | cpio -idmv
+rpm2cpio %{SOURCE0} | cpio -idmv
+rpm2cpio %{SOURCE1} | cpio -idmv
 
 #---------------------------------------------------------------------------------
 
