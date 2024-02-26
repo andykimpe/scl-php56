@@ -67,6 +67,34 @@ mkdir -p %{buildroot}
 cd %{buildroot}
 rpm2cpio %{SOURCE0} | cpio -idmv
 rpm2cpio %{SOURCE1} | cpio -idmv
+mkdir -p %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/usr/bin/
+mkdir -p %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/usr/lib/gcc/x86_64-redhat-linux/10/plugin/
+mkdir -p %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/usr/share/doc/annobin-plugin/
+mkdir -p %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/usr/share/info/
+mkdir -p %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/usr/share/licenses/devtoolset-10-annobin-9.23/
+mkdir -p %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/usr/
+mkdir -p %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/usr/
+mkdir -p %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/usr/
+mv 
+
+   /opt/rh/devtoolset-10/root/usr/bin/annocheck
+   /opt/rh/devtoolset-10/root/usr/lib/gcc/x86_64-redhat-linux/10/plugin/annobin.so
+   /opt/rh/devtoolset-10/root/usr/lib/gcc/x86_64-redhat-linux/10/plugin/annobin.so.0
+   /opt/rh/devtoolset-10/root/usr/lib/gcc/x86_64-redhat-linux/10/plugin/annobin.so.0.0.0
+   /opt/rh/devtoolset-10/root/usr/share/doc/annobin-plugin/annotation.proposal.txt
+   /opt/rh/devtoolset-10/root/usr/share/info/annobin.info.gz
+   /opt/rh/devtoolset-10/root/usr/share/licenses/devtoolset-10-annobin-9.23/COPYING3
+   /opt/rh/devtoolset-10/root/usr/share/licenses/devtoolset-10-annobin-9.23/LICENSE
+   /opt/rh/devtoolset-10/root/usr/share/man/man1/annobin.1.gz
+   /opt/rh/devtoolset-10/root/usr/share/man/man1/annocheck.1.gz
+   /opt/rh/devtoolset-10/root/usr/share/man/man1/built-by.1.gz
+   /opt/rh/devtoolset-10/root/usr/share/man/man1/check-abi.1.gz
+   /opt/rh/devtoolset-10/root/usr/share/man/man1/hardened.1.gz
+   /opt/rh/devtoolset-10/root/usr/share/man/man1/run-on-binaries-in.1.gz
+
+
+
+
 
 #---------------------------------------------------------------------------------
 
@@ -84,12 +112,6 @@ rpm2cpio %{SOURCE1} | cpio -idmv
 #%{_mandir}/man1/hardened.1*
 #%{_mandir}/man1/run-on-binaries-in.1*
 
-#%if %{with clangplugin}
-#%{ANNOBIN_CLANG_PLUGIN_DIR}
-#%endif
-#%if %{with llvmplugin}
-#%{ANNOBIN_CLANG_PLUGIN_DIR}
-#%endif
 
 #%if %{with annocheck}
 %files annocheck
