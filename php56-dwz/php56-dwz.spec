@@ -24,23 +24,25 @@ DW_TAG_partial_unit compilation units (CUs) for duplicated information
 and using DW_TAG_imported_unit to import it into each CU that needs it.
 
 %prep
-%setup -q -n dwz-%{version}
-
+%setup -q  -c -T -n dwz-%{version}
 %build
-make %{?_smp_mflags} CFLAGS='%{optflags}' prefix=%{_prefix} \
-  mandir=%{_mandir} bindir=%{_bindir}
-
 %install
 rm -rf %{buildroot}
-make DESTDIR=%{buildroot} prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir} \
-  install
+mkdir -p %{buildroot}
+cd %{buildroot}
+rpm2cpio %{SOURCE0} | cpio -idmv
+rpm2cpio %{SOURCE1} | cpio -idmv
+mkdir -p %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/
+cp -R %{buildroot}/opt/rh/devtoolset-7/root/* %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/
+rm -rf %{buildroot}/opt/rh/
+
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc COPYING COPYING3 COPYING.RUNTIME
+#%doc COPYING COPYING3 COPYING.RUNTIME
 %{_bindir}/dwz
 %{_mandir}/man1/dwz.1*
 
