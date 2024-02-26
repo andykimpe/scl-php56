@@ -32,9 +32,6 @@ that it compiles.
 Note - the plugin is automatically enabled in gcc builds via flags
 provided by the redhat-rpm-macros package.
 
-#---------------------------------------------------------------------------------
-
-BuildRequires: elfutils-debuginfod-client-devel
 
 
 #---------------------------------------------------------------------------------
