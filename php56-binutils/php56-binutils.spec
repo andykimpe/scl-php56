@@ -14,7 +14,7 @@
 %{?scl:%{?scl_package:%scl_package binutils}}
 
 Summary: A GNU collection of binary utilities
-Name: %{?scl_prefix}binutils
+Name: php56-binutils
 Version: 2.28
 Release: 8%{?dist}.sc1
 License: GPLv3+
@@ -81,6 +81,8 @@ rpm2cpio %{SOURCE1} | cpio -idmv
 mkdir -p %{buildroot}/opt/php56/root/
 cp -R %{buildroot}/opt/rh/devtoolset-7/root/* %{buildroot}/opt/php56/root/
 rm -rf %{buildroot}/opt/rh/
+cd %{buildroot}/opt/php56/root/usr/share/licenses/
+mv devtoolset-7-binutils-2.28 php56-binutils-2.28
 
 
 %clean
@@ -133,6 +135,9 @@ exit 0
 %exclude /opt/php56/root/usr/lib64/libopcodes.so
 /opt/php56/root/usr/share/info/*
 /opt/php56/root/usr/share/locale/*
+/opt/php56/root/usr/share/doc/*
+/opt/php56/root/usr/share/licenses/php56-binutils-2.28/*
+
 
 %files devel
 %defattr(-,root,root,-)
