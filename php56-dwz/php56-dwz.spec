@@ -1,4 +1,7 @@
-%{?scl:%scl_package gcc}
+%global debug_package %{nil}
+%global __brp_check_rpaths %{nil}
+%global _scl_prefix    /opt
+%{?scl:%scl_package php56}
 Summary: DWARF optimization and duplicate removal tool
 Name: %{?scl_prefix}dwz
 Version: 0.12
