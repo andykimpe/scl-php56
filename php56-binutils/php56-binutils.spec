@@ -78,8 +78,8 @@ mkdir -p %{buildroot}
 cd %{buildroot}
 rpm2cpio %{SOURCE0} | cpio -idmv
 rpm2cpio %{SOURCE1} | cpio -idmv
-mkdir -p %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/
-cp -R %{buildroot}/opt/rh/devtoolset-7/root/* %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/
+mkdir -p %{buildroot}/opt/php56/root/
+cp -R %{buildroot}/opt/rh/devtoolset-7/root/* %{buildroot}/opt/php56/root/
 rm -rf %{buildroot}/opt/rh/
 
 
@@ -126,22 +126,20 @@ exit 0
 
 %files
 %defattr(-,root,root,-)
-%{_scl_prefix}/%{scl_prefix}/root/usr/bin/*
-%{_scl_prefix}/%{scl_prefix}/root/usr/share/man/man1/*
-%{_scl_prefix}/%{scl_prefix}/root/usr/lib64/lib*.so
-%exclude %{_scl_prefix}/%{scl_prefix}/root/usr/lib64/libbfd.so
-%exclude %{_scl_prefix}/%{scl_prefix}/root/usr/lib64/libopcodes.so
-%{_scl_prefix}/%{scl_prefix}/root/usr/share/info/*
+/opt/php56/root/usr/bin/*
+/opt/php56/root/usr/share/man/man1/*
+/opt/php56/root/usr/lib64/lib*.so
+%exclude /opt/php56/root/usr/lib64/libbfd.so
+%exclude /opt/php56/root/usr/lib64/libopcodes.so
+/opt/php56/root/usr/share/info/*
+/opt/php56/root/usr/share/locale/*
 
 %files devel
 %defattr(-,root,root,-)
-%{_scl_prefix}/%{scl_prefix}/root/usr/include/*
-%{_scl_prefix}/%{scl_prefix}/root/usr/lib64/lib*.a
-%{_scl_prefix}/%{scl_prefix}/root/usr/lib64/libbfd.so
-%{_scl_prefix}/%{scl_prefix}/root/usr/lib64/libopcodes.so
-#%if %{with docs}
-#%endif # with docs
-#%endif # %{isnative}
+/opt/php56/root/usr/include/*
+/opt/php56/root/usr/lib64/lib*.a
+/opt/php56/root/usr/lib64/libbfd.so
+/opt/php56/root/usr/lib64/libopcodes.so
 
 %changelog
 * Thu Aug 31 2017 Nick Clifton  <nickc@redhat.com> 2.28-8
