@@ -13,7 +13,7 @@
 %{?scl:%{?scl_package:%scl_package binutils}}
 
 Summary: A GNU collection of binary utilities
-Name: %{?scl_prefix}%{?cross}binutils%{?_with_debug:-debug}
+Name: %{?scl_prefix}binutils
 Version: 2.28
 Release: 8%{?dist}.sc1
 License: GPLv3+
@@ -21,105 +21,9 @@ Group: Development/Tools
 URL: http://sources.redhat.com/binutils
 Source0: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-binutils-2.28-8.el7.sc1.x86_64.rpm
 Source1: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-binutils-devel-2.28-8.el7.sc1.x86_64.rpm
-
-Patch01: binutils-2.20.51.0.2-libtool-lib64.patch
-Patch02: binutils-2.20.51.0.10-ppc64-pie.patch
-Patch03: binutils-2.20.51.0.2-ia64-lib64.patch
-Patch04: binutils-2.25-version.patch
-Patch05: binutils-2.25-set-long-long.patch
-Patch06: binutils-2.20.51.0.10-sec-merge-emit.patch
-# Enable -zrelro by default: BZ #621983
-Patch07: binutils-2.22.52.0.1-relro-on-by-default.patch
-# Local patch - export demangle.h with the binutils-devel rpm.
-Patch08: binutils-2.22.52.0.1-export-demangle.h.patch
-# Disable checks that config.h has been included before system headers.  BZ #845084
-Patch09: binutils-2.22.52.0.4-no-config-h-check.patch
-# Fix detections little endian PPC shared libraries
-Patch10: binutils-2.24-ldforcele.patch
-# Import H.J.Lu's Kernel LTO patch.
-Patch11: binutils-2.26-lto.patch
-Patch12: binutils-2.23.51.0.3-Provide-std-tr1-hash.patch
-Patch13: binutils-rh1038339.patch
-Patch14: binutils-2.24-rh919508.patch
-# Revert H.J.'s patch to elide PLT entries.
-Patch15: binutils-2.27-revert-PLT-elision.patch
-# Sync libiberty sources with FSF GCC mainline.
-Patch16: binutils-2.28-libiberty-bugfixes.patch
-# Add support for GNU BUILD NOTEs.
-Patch17: binutils-gnu-build-notes.patch
-# GAS: Emit name, comp_dir and producer strings in .debug_str.
-Patch18: binutils-2.28-gas-comp_dir.patch
-# Import fix for PR 21124 and 20519
-Patch19: binutils-2.28-ppc-dynamic-relocs.patch
-# Have readelf skip checks of the dynamic section when its type is SHT_NOBITS.
-Patch20: binutils-2.28-dynamic-section-warning.patch
-# Fix some unexpected failures in the linker testsuite
-Patch21: binutils-2.28-testsuite-failure-fixes.patch
-# Fix the incorrect generation of copy relocs on AArch64.
-Patch22: binutils-2.28-aarch64-copy-relocs.patch
-# Ignore duplicate indirect symbols produced by GOLD.
-Patch23: binutils-2.28-ignore-gold-duplicates.patch
-# Add extra PowerPC instructions that were omitted from the 2.28 release.
-Patch24: binutils-2.28-ppc-extra-insns.patch
-# Add support for displaying new DWARF5 tags including DW_AT_export_symbols.
-Patch25: binutils-2.28-DW_AT_export_symbols.patch
-Buildroot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-
-BuildRequires: gcc
-
-# Gold needs bison in order to build gold/yyscript.c.
-# Bison needs m4.
-%if "%{build_gold}" == "both"
-BuildRequires: bison, m4, gcc-c++
-%endif
-
-%if %{without bootstrap}
-BuildRequires: gettext, flex, zlib-devel
-%endif
-
-%if %{with docs}
-BuildRequires: texinfo >= 4.0
-# BZ 920545: We need pod2man in order to build the manual pages.
-BuildRequires: /usr/bin/pod2man
-Requires(post): /sbin/install-info
-Requires(preun): /sbin/install-info
-%endif
-
-# Required for: ld-bootstrap/bootstrap.exp bootstrap with --static
-# It should not be required for: ld-elf/elf.exp static {preinit,init,fini} array
-%if %{with testsuite}
-# relro_test.sh uses dc which is part of the bc rpm, hence its inclusion here.
-BuildRequires: dejagnu, zlib-static, glibc-static, sharutils, bc
-%if "%{build_gold}" == "both"
-# The GOLD testsuite needs a static libc++
-%if 0%{?rhel} >= 7
-BuildRequires: libstdc++-static
-%endif
-%endif
-%endif
-
-Conflicts: gcc-c++ < 4.0.0
-
-Requires(post): /sbin/install-info
-Requires(preun): /sbin/install-info
-
-%{?scl:Requires:%scl_runtime}
-
-# The higher of these two numbers determines the default ld.
-%{!?ld_bfd_priority: %global ld_bfd_priority	50}
-%{!?ld_gold_priority:%global ld_gold_priority	30}
-
-%if "%{build_gold}" == "both"
-Requires(post): coreutils
-Requires(post): %{alternatives_cmd}
-Requires(preun): %{alternatives_cmd}
-%endif
-
-# On ARM EABI systems, we do want -gnueabi to be part of the
-# target triple.
-%ifnarch %{arm}
-%define _gnu %{nil}
-%endif
+BuildRequires: cpio rpm rpm-build
+%{?scl:BuildRequires:%scl_runtime}
+%{?scl:BuildRequires:scl-utils-build}
 
 %description
 Binutils is a collection of binary utilities, including ar (for
@@ -143,10 +47,8 @@ Group: System Environment/Libraries
 # a version of the binutils that another package cannot use.
 # See:  https://bugzilla.redhat.com/show_bug.cgi?id=1485002
 # for more details.
-%if %{with docs}
 Requires(post): /sbin/install-info
 Requires(preun): /sbin/install-info
-%endif
 Requires: zlib-devel
 Requires: %{?scl_prefix}binutils = %{version}-%{release}
 # BZ 1215242: We need touch...
