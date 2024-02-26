@@ -12,6 +12,8 @@ Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
 Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
 Source4:    https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
 Source5:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
+Source6:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
+Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
 %endif
 %if 0%{?rhel} == 7
 Epoch:      1
@@ -19,10 +21,12 @@ Version:	20130529
 Release:	20%{?dist}
 Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
 Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
-Source2:	hhttps://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
+Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
 Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
 Source4:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
 Source5:    https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
+Source6:	hhttps://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
+Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
 %endif
 %if 0%{?fedora} > 36 || 0%{?rhel} > 7
 Epoch:      1
@@ -34,6 +38,8 @@ Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
 Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
 Source4:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
 Source5:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
+Source6:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
+Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
 %endif
 Patch1:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0003-Scl-utils-layout-patch-from-fedora-famillecollet.com.patch
 Patch2:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/BZ-2056462-do-not-error-out-on-SIGINT.patch
