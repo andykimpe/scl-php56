@@ -3,7 +3,7 @@
 %global _scl_prefix    /opt
 %{?scl:%scl_package php56}
 Summary: DWARF optimization and duplicate removal tool
-Name: %{?scl_prefix}dwz
+Name: php56-dwz
 Version: 0.12
 Release: 1%{?dist}.sc1
 License: GPLv2+ and GPLv3+
