@@ -126,14 +126,13 @@ exit 0
 
 %files
 %defattr(-,root,root,-)
-%license COPYING COPYING3 COPYING3.LIB COPYING.LIB
-%doc README
-%{_bindir}/%{?cross}[!l]*
+#%license COPYING COPYING3 COPYING3.LIB COPYING.LIB
+#%doc README
+%{_bindir}/*
 #%if "%{build_gold}" == "both"
 #%{_bindir}/%{?cross}ld.*
 #%ghost %{_bindir}/%{?cross}ld
 #%else
-%{_bindir}/%{?cross}ld*
 #%endif
 %{_mandir}/man1/*
 #%if %{enable_shared}
@@ -144,8 +143,7 @@ exit 0
 #
 #%if %{isnative}
 #%if %{with docs}
-%{_infodir}/[^b]*info*
-%{_infodir}/binutils*info*
+%{_infodir}/*
 #%endif
 
 %files devel
@@ -155,7 +153,6 @@ exit 0
 %{_libdir}/libbfd.so
 %{_libdir}/libopcodes.so
 #%if %{with docs}
-%{_infodir}/bfd*info*
 #%endif # with docs
 #%endif # %{isnative}
 
