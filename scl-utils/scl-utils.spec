@@ -171,7 +171,6 @@ sleep 170000s
 make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
 %endif
 %if 0%{?rhel} == 7
-%cmake .
 make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
 %endif
 %if 0%{?fedora} > 36 || 0%{?rhel} > 7
@@ -200,19 +199,22 @@ cat %SOURCE3 >> %buildroot%{_sysconfdir}/rpm/macros.scl
 install -m 755 %SOURCE2 %buildroot%{_bindir}/scl_source
 %endif
 %if 0%{?rhel} == 7
-rm -rf %{buildroot}
-make install DESTDIR=%{buildroot}
-if [ %{macrosdir} != %{_sysconfdir}/rpm ]; then
-    mkdir -p %{buildroot}%{macrosdir}
-    mv %{buildroot}%{_sysconfdir}/rpm/macros.scl %{buildroot}%{macrosdir}
-    rmdir %{buildroot}%{_sysconfdir}/rpm
-fi
-cat %SOURCE1 >> %{buildroot}%{macrosdir}/macros.scl
-mkdir -p %{buildroot}%{_sysconfdir}/scl
-cd %{buildroot}%{_sysconfdir}/scl
-mkdir modulefiles
-mkdir prefixes
+rm -rf %buildroot
+mkdir -p %buildroot%{_sysconfdir}/rpm
+mkdir -p %buildroot%{_sysconfdir}/scl/prefixes
+pushd %buildroot%{_sysconfdir}/scl
 ln -s prefixes conf
+popd
+mkdir -p %buildroot/opt/rh
+install -d -m 755 %buildroot%{_mandir}/man1
+make install DESTDIR=%buildroot
+cat %SOURCE7 >> %buildroot%{_sysconfdir}/rpm/macros.scl
+install -m 755 %SOURCE6 %buildroot%{_bindir}/scl_source
+
+# remove brp-python-hardlink invocation as it is not present in RHEL5
+%if 0%{?rhel} == 5
+  sed -i -e '/^.*brp-python-hardlink.*/d' %buildroot%{_sysconfdir}/rpm/macros.scl
+%endif
 %endif
 %if 0%{?fedora} > 36 || 0%{?rhel} > 7
 rm -rf %{buildroot}
@@ -264,6 +266,7 @@ rm -rf %buildroot
 %files
 %defattr(-,root,root,-)
 %dir /opt/rh
+%{_sysconfdir}/scl/conf
 %dir %{_sysconfdir}/scl/prefixes
 %{_bindir}/scl
 %{_bindir}/scl_enabled
@@ -271,6 +274,7 @@ rm -rf %buildroot
 %{_mandir}/man1/*
 %{_sysconfdir}/bash_completion.d/scl.bash
 
+%{!?_rpmconfigdir:%global _rpmconfigdir /usr/lib/rpm}
 %files build
 %defattr(-,root,root,-)
 %{_sysconfdir}/rpm/macros.scl
