@@ -55,29 +55,20 @@ Patch17:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0012-Fix
 Patch18:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0013-Fixed_main_metapackage_dependencies.patch
 Patch19:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0014-Add-capability-to-share-collections-using-nfs.patch
 Patch20:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl-utils-20120927-shebang.patch
-
-
-Patch21: 0001-Rename-attr-macros-so-they-are-correctly-named.patch
-Patch22: 0002-Implement-as-a-command-separator.patch
-Patch23: 0003-Mention-environment-modifying-commands-in-the-man-pa.patch
-Patch24: 0004-Check-whether-a-file-was-created-when-doing-mkstemp-.patch
-Patch25: 0005-Various-fixes-in-Provides-and-Requires-of-scl-packag.patch
-Patch26: 0006-Modified-the-behavior-of-debuginfo-generation-proces.patch
-Patch27: 0007-Changed-command-description-in-scl-man-pages.patch
-Patch28: 0008-Changed-script-paths-in-__os_install_post.patch
-Patch29: 0009-Remove-sclbuild-as-it-s-not-that-useful.patch
-Patch30: 0010-Added-capability-to-register-and-deregister-collecti.patch
-Patch31: 0011-Fix-missing-allocation-check-in-read_script_output.patch
-Patch32: 0012-Introduce-scl_dependency_generators-macro.patch
-Patch33: 0013-Add-capability-to-share-collections-using-nfs.patch
-Patch34: scl-utils-20130529-shebang.patch
-
-
-
-
-
-
-
+Patch21:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0001-Rename-attr-macros-so-they-are-correctly-named.patch
+Patch22:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0002-Implement-as-a-command-separator.patch
+Patch23:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0003-Mention-environment-modifying-commands-in-the-man-pa.patch
+Patch24:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0004-Check-whether-a-file-was-created-when-doing-mkstemp-.patch
+Patch25:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0005-Various-fixes-in-Provides-and-Requires-of-scl-packag.patch
+Patch26:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0006-Modified-the-behavior-of-debuginfo-generation-proces.patch
+Patch27:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0007-Changed-command-description-in-scl-man-pages.patch
+Patch28:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0008-Changed-script-paths-in-__os_install_post.patch
+Patch29:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0009-Remove-sclbuild-as-it-s-not-that-useful.patch
+Patch30:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0010-Added-capability-to-register-and-deregister-collecti.patch
+Patch31:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0011-Fix-missing-allocation-check-in-read_script_output.patch
+Patch32:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0012-Introduce-scl_dependency_generators-macro.patch
+Patch33:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0013-Add-capability-to-share-collections-using-nfs.patch
+Patch34:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl-utils-20130529-shebang.patch
 
 Summary:    Utilities for alternative packaging
 License:    GPLv2+
