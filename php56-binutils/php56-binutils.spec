@@ -78,6 +78,10 @@ mkdir -p %{buildroot}
 cd %{buildroot}
 rpm2cpio %{SOURCE0} | cpio -idmv
 rpm2cpio %{SOURCE1} | cpio -idmv
+mkdir -p %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/
+cp -R %{buildroot}/opt/rh/devtoolset-7/root/* %{buildroot}%{_scl_prefix}/%{scl_prefix}/root/
+rm -rf %{buildroot}/opt/rh/
+
 
 %clean
 rm -rf %{buildroot}
@@ -122,36 +126,36 @@ exit 0
 
 %files
 %defattr(-,root,root,-)
-#%license COPYING COPYING3 COPYING3.LIB COPYING.LIB
-#%doc README
-#%{_bindir}/%{?cross}[!l]*
+%license COPYING COPYING3 COPYING3.LIB COPYING.LIB
+%doc README
+%{_bindir}/%{?cross}[!l]*
 #%if "%{build_gold}" == "both"
 #%{_bindir}/%{?cross}ld.*
 #%ghost %{_bindir}/%{?cross}ld
 #%else
-#%{_bindir}/%{?cross}ld*
+%{_bindir}/%{?cross}ld*
 #%endif
-#%{_mandir}/man1/*
+%{_mandir}/man1/*
 #%if %{enable_shared}
-#%{_libdir}/lib*.so
-#%exclude %{_libdir}/libbfd.so
-#%exclude %{_libdir}/libopcodes.so
+%{_libdir}/lib*.so
+%exclude %{_libdir}/libbfd.so
+%exclude %{_libdir}/libopcodes.so
 #%endif
 #
 #%if %{isnative}
 #%if %{with docs}
-#%{_infodir}/[^b]*info*
-#%{_infodir}/binutils*info*
+%{_infodir}/[^b]*info*
+%{_infodir}/binutils*info*
 #%endif
 
 %files devel
 %defattr(-,root,root,-)
-#%{_prefix}/include/*
-#%{_libdir}/lib*.a
-#%{_libdir}/libbfd.so
-#%{_libdir}/libopcodes.so
+%{_prefix}/include/*
+%{_libdir}/lib*.a
+%{_libdir}/libbfd.so
+%{_libdir}/libopcodes.so
 #%if %{with docs}
-#%{_infodir}/bfd*info*
+%{_infodir}/bfd*info*
 #%endif # with docs
 #%endif # %{isnative}
 
