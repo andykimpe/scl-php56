@@ -115,12 +115,6 @@ Essential RPM build macros for alternative packaging.
 %endif
 
 
-
-
-
-%setup -q  -c -T -n scl-utils-%{version}
-%autosetup -p1
-
 %build
 %if 0%{?rhel} == 6
 echo "rhel 6"
