@@ -17,7 +17,7 @@ Epoch:      1
 Version:	20120927
 Release:	30%{?dist}
 Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
-Source1:	https://github.com/andykimpe/scl-php56/raw/master/macros.scl-filesystem.el6
+Source1:	https://github.com/andykimpe/scl-php56/raw/master/macros.scl-filesystem
 Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl_source
 Source3:	https://github.com/andykimpe/scl-php56/raw/master/macros.scl-filesystem.el6
 Source4:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
@@ -28,6 +28,7 @@ Version:    2.0.3
 Release:    7%{?dist}
 Source0:    https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
 Source1:    https://github.com/andykimpe/scl-php56/raw/master/macros.scl-filesystem
+Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl_source
 Source3:	https://github.com/andykimpe/scl-php56/raw/master/macros.scl-filesystem.el6
 Source4:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
 %endif
@@ -131,10 +132,42 @@ echo "new"
 echo "sleep 170000"
 sleep 170000s
 %endif
+
+
+
+%if 0%{?rhel} == 6
+make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
+%endif
+%if 0%{?rhel} == 7
 %cmake .
 make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
+%endif
+%if 0%{?fedora} > 36 || 0%{?rhel} > 7
+%cmake .
+make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
+%endif
+
+
+
+
+
+
+
 
 %install
+
+%if 0%{?rhel} == 6
+rm -rf %buildroot
+mkdir -p %buildroot%{_sysconfdir}/rpm
+mkdir -p %buildroot%{_sysconfdir}/scl/prefixes
+mkdir -p %buildroot/opt/rh
+mkdir -p %buildroot%{_rpmconfigdir}/redhat
+install -d -m 755 %buildroot%{_mandir}/man1
+make install DESTDIR=%buildroot
+cat %SOURCE3 >> %buildroot%{_sysconfdir}/rpm/macros.scl
+install -m 755 %SOURCE2 %buildroot%{_bindir}/scl_source
+%endif
+%if 0%{?rhel} == 7
 rm -rf %{buildroot}
 make install DESTDIR=%{buildroot}
 if [ %{macrosdir} != %{_sysconfdir}/rpm ]; then
@@ -148,10 +181,74 @@ cd %{buildroot}%{_sysconfdir}/scl
 mkdir modulefiles
 mkdir prefixes
 ln -s prefixes conf
+%endif
+%if 0%{?fedora} > 36 || 0%{?rhel} > 7
+rm -rf %{buildroot}
+make install DESTDIR=%{buildroot}
+if [ %{macrosdir} != %{_sysconfdir}/rpm ]; then
+    mkdir -p %{buildroot}%{macrosdir}
+    mv %{buildroot}%{_sysconfdir}/rpm/macros.scl %{buildroot}%{macrosdir}
+    rmdir %{buildroot}%{_sysconfdir}/rpm
+fi
+cat %SOURCE1 >> %{buildroot}%{macrosdir}/macros.scl
+mkdir -p %{buildroot}%{_sysconfdir}/scl
+cd %{buildroot}%{_sysconfdir}/scl
+mkdir modulefiles
+mkdir prefixes
+ln -s prefixes conf
+%endif
 
+
+%if 0%{?fedora} > 36 || 0%{?rhel} > 7
 %check
 make check
+%endif
 
+%clean
+rm -rf %buildroot
+
+
+%if 0%{?rhel} == 6
+%files
+%defattr(-,root,root,-)
+%dir /opt/rh
+%dir %{_sysconfdir}/scl/prefixes
+%{_bindir}/scl
+%{_bindir}/scl_enabled
+%{_bindir}/scl_source
+%{_mandir}/man1/*
+%{_sysconfdir}/bash_completion.d/scl.bash
+
+%files build
+%defattr(-,root,root,-)
+%{_sysconfdir}/rpm/macros.scl
+%{_rpmconfigdir}/scldeps.sh
+%{_rpmconfigdir}/fileattrs/scl.attr
+%{_rpmconfigdir}/brp-scl-compress
+%{_rpmconfigdir}/brp-scl-python-bytecompile
+%endif
+
+%if 0%{?rhel} == 7
+%files
+%defattr(-,root,root,-)
+%dir /opt/rh
+%dir %{_sysconfdir}/scl/prefixes
+%{_bindir}/scl
+%{_bindir}/scl_enabled
+%{_bindir}/scl_source
+%{_mandir}/man1/*
+%{_sysconfdir}/bash_completion.d/scl.bash
+
+%files build
+%defattr(-,root,root,-)
+%{_sysconfdir}/rpm/macros.scl
+%{_rpmconfigdir}/scldeps.sh
+%{_rpmconfigdir}/fileattrs/scl.attr
+%{_rpmconfigdir}/brp-scl-compress
+%{_rpmconfigdir}/brp-scl-python-bytecompile
+%endif
+
+%if 0%{?fedora} > 36 || 0%{?rhel} > 7
 %files
 %dir %{_sysconfdir}/scl
 %dir %{_sysconfdir}/scl/modulefiles
@@ -174,6 +271,6 @@ make check
 %{_rpmconfigdir}/fileattrs/sclbuild.attr
 %{_rpmconfigdir}/brp-scl-compress
 %{_rpmconfigdir}/brp-scl-python-bytecompile
-
+%endif
 
 %changelog
