@@ -1,6 +1,7 @@
 
 %define __python /opt/rh/gcc-toolset-9/root/usr/bin/python3
 %{?scl:%scl_package annobin}
+%global _scl_prefix    /opt/
 
 Name:    %{?scl_prefix}annobin
 Summary: Annotate and examine compiled binary files
