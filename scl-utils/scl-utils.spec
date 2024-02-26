@@ -15,20 +15,20 @@ Source5:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-201
 Source6:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
 Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
 %endif
-%if 0%{?rhel} == 7
-Epoch:      1
-Version:	20130529
-Release:	20%{?dist}
-Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
-Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
-Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
-Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
-Source4:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
-Source5:	https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
-Source6:	hhttps://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
-Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
-%endif
-%if 0%{?fedora} > 36 || 0%{?rhel} > 7
+#%if 0%{?rhel} == 7
+#Epoch:      1
+#Version:	20130529
+#Release:	20%{?dist}
+#Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
+#Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
+#Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
+#Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
+#Source4:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
+#Source5:	https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
+#Source6:	hhttps://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
+#Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
+#%endif
+%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 Epoch:      1
 Version:    2.0.3
 Release:    7%{?dist}
@@ -86,7 +86,7 @@ URL:        https://github.com/sclorg/scl-utils
 BuildRequires:	gcc make
 BuildRequires:  cmake
 BuildRequires:  rpm-devel
-%if 0%{?fedora} > 36 || 0%{?rhel} > 7
+%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 BuildRequires:  libcmocka libcmocka-devel environment-modules
 Requires:   %{_bindir}/modulecmd
 %endif
@@ -121,24 +121,24 @@ Essential RPM build macros for alternative packaging.
 %patch19 -p1 -b .nfsmoutable
 %patch20 -p1 -b .shebang
 %endif
-%if 0%{?rhel} == 7
-%setup -q -n scl-utils-scl-utils-%{version}
-%patch21 -p1 -b .attr-names
-%patch22 -p1 -b .command-separator
-%patch23 -p1 -b .env-variables-man
-%patch24 -p1 -b .coverity-mkstemp
-%patch25 -p1
-%patch26 -p1 
-%patch27 -p1
-%patch28 -p1
-%patch29 -p1
-%patch30 -p1
-%patch31 -p1
-%patch32 -p1
-%patch33 -p1
-%patch34 -p1 -b .shebang
-%endif
-%if 0%{?fedora} > 36 || 0%{?rhel} > 7
+#%if 0%{?rhel} == 7
+#%setup -q -n scl-utils-scl-utils-%{version}
+#%patch21 -p1 -b .attr-names
+#%patch22 -p1 -b .command-separator
+#%patch23 -p1 -b .env-variables-man
+#%patch24 -p1 -b .coverity-mkstemp
+#%patch25 -p1
+#%patch26 -p1 
+#%patch27 -p1
+#%patch28 -p1
+#%patch29 -p1
+#%patch30 -p1
+#%patch31 -p1
+#%patch32 -p1
+#%patch33 -p1
+#%patch34 -p1 -b .shebang
+#%endif
+%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 %setup -q -n scl-utils-%{version}
 %patch1 -p1 -b .Scl-utils-layout-patch-from-fedora-famillecollet.com
 %patch2 -p1 -b .BZ-2056462-do-not-error-out-on-SIGINT
@@ -152,10 +152,10 @@ Essential RPM build macros for alternative packaging.
 %if 0%{?rhel} == 6
 make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
 %endif
-%if 0%{?rhel} == 7
-make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
-%endif
-%if 0%{?fedora} > 36 || 0%{?rhel} > 7
+#%if 0%{?rhel} == 7
+#make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
+#%endif
+%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 %cmake .
 make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
 %endif
@@ -173,25 +173,25 @@ make install DESTDIR=%buildroot
 cat %SOURCE3 >> %buildroot%{_sysconfdir}/rpm/macros.scl
 install -m 755 %SOURCE2 %buildroot%{_bindir}/scl_source
 %endif
-%if 0%{?rhel} == 7
-rm -rf %buildroot
-mkdir -p %buildroot%{_sysconfdir}/rpm
-mkdir -p %buildroot%{_sysconfdir}/scl/prefixes
-pushd %buildroot%{_sysconfdir}/scl
-ln -s prefixes conf
-popd
-mkdir -p %buildroot/opt/rh
-install -d -m 755 %buildroot%{_mandir}/man1
-make install DESTDIR=%buildroot
-cat %SOURCE7 >> %buildroot%{_sysconfdir}/rpm/macros.scl
-install -m 755 %SOURCE6 %buildroot%{_bindir}/scl_source
-
+#%if 0%{?rhel} == 7
+#rm -rf %buildroot
+#mkdir -p %buildroot%{_sysconfdir}/rpm
+#mkdir -p %buildroot%{_sysconfdir}/scl/prefixes
+#pushd %buildroot%{_sysconfdir}/scl
+#ln -s prefixes conf
+#popd
+#mkdir -p %buildroot/opt/rh
+#install -d -m 755 %buildroot%{_mandir}/man1
+#make install DESTDIR=%buildroot
+#cat %SOURCE7 >> %buildroot%{_sysconfdir}/rpm/macros.scl
+#install -m 755 %SOURCE6 %buildroot%{_bindir}/scl_source
+#
 # remove brp-python-hardlink invocation as it is not present in RHEL5
-%if 0%{?rhel} == 5
-  sed -i -e '/^.*brp-python-hardlink.*/d' %buildroot%{_sysconfdir}/rpm/macros.scl
-%endif
-%endif
-%if 0%{?fedora} > 36 || 0%{?rhel} > 7
+#%if 0%{?rhel} == 5
+#  sed -i -e '/^.*brp-python-hardlink.*/d' %buildroot%{_sysconfdir}/rpm/macros.scl
+#%endif
+#%endif
+%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 rm -rf %{buildroot}
 make install DESTDIR=%{buildroot}
 if [ %{macrosdir} != %{_sysconfdir}/rpm ]; then
@@ -208,7 +208,7 @@ ln -s prefixes conf
 %endif
 
 
-%if 0%{?fedora} > 36 || 0%{?rhel} > 7
+%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 %check
 make check
 %endif
@@ -237,29 +237,29 @@ rm -rf %buildroot
 %{_rpmconfigdir}/brp-scl-python-bytecompile
 %endif
 
-%if 0%{?rhel} == 7
-%files
-%defattr(-,root,root,-)
-%dir /opt/rh
-%{_sysconfdir}/scl/conf
-%dir %{_sysconfdir}/scl/prefixes
-%{_bindir}/scl
-%{_bindir}/scl_enabled
-%{_bindir}/scl_source
-%{_mandir}/man1/*
-%{_sysconfdir}/bash_completion.d/scl.bash
+#%if 0%{?rhel} == 7
+#%files
+#%defattr(-,root,root,-)
+#%dir /opt/rh
+#%{_sysconfdir}/scl/conf
+#%dir %{_sysconfdir}/scl/prefixes
+#%{_bindir}/scl
+#%{_bindir}/scl_enabled
+#%{_bindir}/scl_source
+#%{_mandir}/man1/*
+#%{_sysconfdir}/bash_completion.d/scl.bash
+#
+#%{!?_rpmconfigdir:%global _rpmconfigdir /usr/lib/rpm}
+#%files build
+#%defattr(-,root,root,-)
+#%{_sysconfdir}/rpm/macros.scl
+#%{_rpmconfigdir}/scldeps.sh
+#%{_rpmconfigdir}/fileattrs/scl.attr
+#%{_rpmconfigdir}/brp-scl-compress
+#%{_rpmconfigdir}/brp-scl-python-bytecompile
+#%endif
 
-%{!?_rpmconfigdir:%global _rpmconfigdir /usr/lib/rpm}
-%files build
-%defattr(-,root,root,-)
-%{_sysconfdir}/rpm/macros.scl
-%{_rpmconfigdir}/scldeps.sh
-%{_rpmconfigdir}/fileattrs/scl.attr
-%{_rpmconfigdir}/brp-scl-compress
-%{_rpmconfigdir}/brp-scl-python-bytecompile
-%endif
-
-%if 0%{?fedora} > 36 || 0%{?rhel} > 7
+%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 %files
 %dir %{_sysconfdir}/scl
 %dir %{_sysconfdir}/scl/modulefiles
