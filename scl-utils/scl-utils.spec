@@ -2,6 +2,14 @@
 %global macrosdir %(d=%{_rpmconfigdir}/macros.d; [ -d $d ] || d=%{_sysconfdir}/rpm; echo $d)
 
 Name:       scl-utils
+%if 0%{?rhel} == 6
+echo "rhel 6"
+%endif
+%if 0%{?rhel} == 7
+echo "rhel7"
+%endif
+
+
 Epoch:      1
 Version:    2.0.3
 Release:    6%{?dist}
