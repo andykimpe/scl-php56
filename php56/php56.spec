@@ -6,6 +6,7 @@
 #
 # Please, preserve the changelog entries
 # 
+%global _scl_prefix    /opt/php56
 %global scl_name_base    php
 %global scl_name_version 56
 %global scl              %{scl_name_base}%{scl_name_version}
