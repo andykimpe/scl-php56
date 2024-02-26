@@ -8,7 +8,7 @@ Group: Development/Tools
 # git archive --format=tar --remote=git://sourceware.org/git/dwz.git \
 #   --prefix=dwz-%{version}/ dwz-%{version} \
 #   | bzip2 -9 > dwz-%{version}.tar.bz2
-Source: dwz-%{version}.tar.bz2
+Source0: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-dwz-0.12-1.el7.sc1.x86_64.rpm
 BuildRoot: %(mktemp -ud %{_tmppath}/dwz-%{version}-%{release}-XXXXXX)
 BuildRequires: elfutils-libelf-devel%{?_isa}
 %{?scl:Requires:%scl_runtime}
