@@ -34,7 +34,8 @@ rpm2cpio %{SOURCE0} | cpio -idmv
 mkdir -p %{buildroot}/opt/php56/root/
 cp -R %{buildroot}/opt/rh/devtoolset-7/root/* %{buildroot}/opt/php56/root/
 rm -rf %{buildroot}/opt/rh/
-
+cd /opt/php56/root/usr/share/doc/devtoolset-7-dwz-0.12/COPYING
+mv devtoolset-7-dwz-0.12 php56-dwz-0.12
 
 %clean
 rm -rf %{buildroot}
@@ -42,8 +43,11 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 #%doc COPYING COPYING3 COPYING.RUNTIME
-#%{_bindir}/dwz
-#%{_mandir}/man1/dwz.1*
+/opt/php56/root/usr/share/doc/php56-dwz-0.12/COPYING
+/opt/php56/root/usr/share/doc/php56-dwz-0.12/COPYING.RUNTIME
+/opt/php56/root/usr/share/doc/php56-dwz-0.12/COPYING3
+/opt/php56/root/usr/bin//dwz
+/opt/php56/root/usr/share/man/man1/dwz.1.gz
 
 %changelog
 * Tue Jul 14 2015 Jakub Jelinek <jakub@redhat.com> 0.12-1
