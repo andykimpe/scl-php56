@@ -2,13 +2,6 @@
 %global macrosdir %(d=%{_rpmconfigdir}/macros.d; [ -d $d ] || d=%{_sysconfdir}/rpm; echo $d)
 
 Name:       scl-utils
-%if 0%{?rhel} == 6
-echo "rhel 6"
-%endif
-%if 0%{?rhel} == 7
-echo "rhel7"
-%endif
-
 
 Epoch:      1
 Version:    2.0.3
@@ -49,6 +42,21 @@ Essential RPM build macros for alternative packaging.
 %autosetup -p1
 
 %build
+%if 0%{?rhel} == 6
+echo "rhel 6"
+echo "sleep 6000"
+sleep 6000
+%endif
+%if 0%{?rhel} == 7
+echo "rhel7"
+echo "sleep 6000"
+sleep 6000
+%endif
+%if 0%{?fedora} > 37 || 0%{?rhel} > 8
+echo "new"
+echo "sleep 6000"
+sleep 6000
+%endif
 %cmake .
 make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
 
