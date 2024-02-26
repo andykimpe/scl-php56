@@ -7,30 +7,33 @@ Epoch:      1
 Version:	20120927
 Release:	30%{?dist}
 Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
-Source1:	https://github.com/andykimpe/scl-php56/raw/master/macros.scl-filesystem
-Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl_source
-Source3:	https://github.com/andykimpe/scl-php56/raw/master/macros.scl-filesystem.el6
+Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
+Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
+Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
 Source4:    https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
+Source5:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
 %endif
 %if 0%{?rhel} == 7
 Epoch:      1
-Version:	20120927
-Release:	30%{?dist}
-Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
-Source1:	https://github.com/andykimpe/scl-php56/raw/master/macros.scl-filesystem
-Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl_source
-Source3:	https://github.com/andykimpe/scl-php56/raw/master/macros.scl-filesystem.el6
+Version:	20130529
+Release:	20%{?dist}
+Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
+Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
+Source2:	hhttps://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
+Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
 Source4:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
+Source5:    https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
 %endif
 %if 0%{?fedora} > 36 || 0%{?rhel} > 7
 Epoch:      1
 Version:    2.0.3
 Release:    7%{?dist}
 Source0:    https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
-Source1:    https://github.com/andykimpe/scl-php56/raw/master/macros.scl-filesystem
-Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl_source
-Source3:	https://github.com/andykimpe/scl-php56/raw/master/macros.scl-filesystem.el6
+Source1:    https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
+Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
+Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
 Source4:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
+Source5:    https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
 %endif
 Patch1:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0003-Scl-utils-layout-patch-from-fedora-famillecollet.com.patch
 Patch2:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/BZ-2056462-do-not-error-out-on-SIGINT.patch
@@ -114,20 +117,20 @@ Essential RPM build macros for alternative packaging.
 %endif
 %if 0%{?rhel} == 7
 %setup -q -n scl-utils-scl-utils-%{version}
-%patch21 -p1 -b .Scl-utils-layout-patch-from-fedora-famillecollet.com
-%patch22 -p1 -b .BZ-2056462-do-not-error-out-on-SIGINT
-%patch23 -p1 -b .BZ-2091000-remove-tmp-file
-%patch24 -p1 -b .rpm419
-%patch25 -p1 -b .brp-python-hardlink
-%patch26 -p1 -b .brp-python-hardlink
-%patch27 -p1 -b .brp-python-hardlink
-%patch28 -p1 -b .brp-python-hardlink
-%patch29 -p1 -b .brp-python-hardlink
-%patch30 -p1 -b .brp-python-hardlink
-%patch31 -p1 -b .brp-python-hardlink
-%patch32 -p1 -b .brp-python-hardlink
-%patch33 -p1 -b .brp-python-hardlink
-%patch34 -p1 -b .brp-python-hardlink
+%patch21 -p1 -b .Rename-attr-macros-so-they-are-correctly-named
+%patch22 -p1 -b .Implement-as-a-command-separator
+%patch23 -p1 -b .Mention-environment-modifying-commands-in-the-man-pa
+%patch24 -p1 -b .Check-whether-a-file-was-created-when-doing-mkstemp
+%patch25 -p1 -b .Various-fixes-in-Provides-and-Requires-of-scl-packag
+%patch26 -p1 -b .Modified-the-behavior-of-debuginfo-generation-proces
+%patch27 -p1 -b .Changed-command-description-in-scl-man-pages
+%patch28 -p1 -b .Changed-script-paths-in-__os_install_post
+%patch29 -p1 -b .Remove-sclbuild-as-it-s-not-that-useful
+%patch30 -p1 -b .Added-capability-to-register-and-deregister-collecti
+%patch31 -p1 -b .Fix-missing-allocation-check-in-read_script_output
+%patch32 -p1 -b .Introduce-scl_dependency_generators-macro
+%patch33 -p1 -b .Add-capability-to-share-collections-using-nfs
+%patch34 -p1 -b .shebang
 %endif
 %if 0%{?fedora} > 36 || 0%{?rhel} > 7
 %setup -q -n scl-utils-%{version}
