@@ -1,1 +1,3 @@
-%_cmake_lib_suffix64 -DLIB_SUFFIX=64
+%debug_package %{nil}
+%__brp_check_rpaths %{nil}
+%_scl_prefix    /opt
