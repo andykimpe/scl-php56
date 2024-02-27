@@ -1,4 +1,3 @@
-%{_rpmconfigdir}/macros.d
 %global debug_package %{nil}
 %global __brp_check_rpaths %{nil}
 %global _scl_prefix    /opt
@@ -12,8 +11,6 @@ Group: Development/Tools
 URL: https://github.com/andykimpe/scl-php56
 Source0: macro.php56
 BuildRequires: coreutils binutils rpm rpm-build
-%{?scl:BuildRequires:%scl_runtime}
-%{?scl:BuildRequires:scl-utils-build}
 
 %description
 macro for php56 scl.
