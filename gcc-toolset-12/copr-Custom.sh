@@ -1,7 +1,7 @@
 #! /bin/sh -x
-#
-#
-#
+#wget https://github.com/andykimpe/scl-php56/raw/master/gcc-toolset-12/copr-Custom.sh -O copr-Custom.sh
+#bash copr-Custom.sh
+#rm -f copr-Custom.sh
 #
 wget https://mirror.stream.centos.org/9-stream/AppStream/source/tree/Packages/gcc-toolset-12-12.0-5.el9.src.rpm
 rpm2cpio *.src.rpm | cpio -idmv
