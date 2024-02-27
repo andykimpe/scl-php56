@@ -15,7 +15,7 @@ Exclusiveos: linux
 # Dyninst only has full support for a few architectures.
 # It has some preliminary support for aarch64 and ppc64le,
 # but we're waiting for those to be feature-complete.
-ExclusiveArch: %{ix86} x86_64 ppc ppc64
+ExclusiveArch: x86_64
 
 Source0: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-dyninst-9.3.2-3.el7.x86_64.rpm
 Source1: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-dyninst-devel-9.3.2-3.el7.x86_64.rpm
