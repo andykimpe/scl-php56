@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+%global __brp_check_rpaths %{nil}
 %{?scl:%scl_package dyninst}
 
 Summary: An API for Run-time Code Generation
