@@ -33,7 +33,7 @@
 Summary:       Package that installs PHP 5.6
 Name:          %scl_name
 Version:       5.6
-Release:       2%{?dist}
+Release:       3%{?dist}
 Group:         Development/Languages
 License:       GPL-2.0-or-later
 
@@ -44,6 +44,7 @@ Source2:       https://github.com/andykimpe/scl-php56/raw/master/LICENSE
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: scl-utils-build
 BuildRequires: help2man
+BuildRequires: php56-macro
 # Temporary work-around
 BuildRequires: iso-codes
 BuildRequires: environment-modules
