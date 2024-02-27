@@ -2,7 +2,7 @@ copr use custom build
 
 ```
 #! /bin/sh -x
-wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/copr-Custom.sh -O copr-Custom.sh
+wget https://github.com/andykimpe/scl-php56/raw/master/php56/copr-Custom.sh -O copr-Custom.sh
 bash copr-Custom.sh
 rm -f copr-Custom.sh
 ```
