@@ -1,5 +1,4 @@
 #! /bin/sh -x
-#! /bin/sh -x
 #wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/copr-Custom.sh -O copr-Custom.sh
 #bash copr-Custom.sh
 #rm -f copr-Custom.sh
