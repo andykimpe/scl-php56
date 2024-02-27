@@ -5,7 +5,7 @@
 Summary: macro for php56 scl
 Name: php56-macro
 Version: 1.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPLv3+
 Group: Development/Tools
 URL: https://github.com/andykimpe/scl-php56
@@ -20,8 +20,7 @@ macro for php56 scl.
 %build
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}%{_rpmconfigdir}/macros.d/
-cp %{SOURCE0} %{buildroot}%{_rpmconfigdir}/macros.d/
+install -p -m0644 -D %{SOURCE0} %{buildroot}%{_rpmconfigdir}/macros.d/macro.php56
 
 
 %clean
