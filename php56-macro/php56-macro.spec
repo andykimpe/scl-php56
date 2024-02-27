@@ -5,7 +5,7 @@
 Summary: macro for php56 scl
 Name: php56-macro
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPLv3+
 Group: Development/Tools
 URL: https://github.com/andykimpe/scl-php56
