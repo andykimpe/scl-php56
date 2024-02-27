@@ -5,12 +5,13 @@
 Summary: DWARF optimization and duplicate removal tool
 Name: php56-dwz
 Version: 0.12
-Release: 1%{?dist}.sc1
+Release: 2%{?dist}.sc1
 License: GPLv2+ and GPLv3+
 Group: Development/Tools
 Source0: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-dwz-0.12-1.el7.sc1.x86_64.rpm
 BuildRoot: %(mktemp -ud %{_tmppath}/dwz-%{version}-%{release}-XXXXXX)
 BuildRequires: cpio rpm rpm-build
+BuildRequires: php56-macro
 %{?scl:BuildRequires:%scl_runtime}
 %{?scl:BuildRequires:scl-utils-build}
 
