@@ -1,28 +1,16 @@
-# rpmbuild parameters:
-# --define "binutils_target arm-linux-gnu" to create arm-linux-gnu-binutils.
-# --with=bootstrap: Build with minimal dependencies.
-# --with=debug: Build without optimizations and without splitting the debuginfo.
-# --without=docs: Skip building documentation.
-# --without=testsuite: Do not run the testsuite.
-
-# For DTS-7 on RHEL-6 we only support x86 and x86_64.
-# For DTS-7 on RHEL-7 we also support ppc64, ppc64le, s390x and aarch64
-%global debug_package %{nil}
-%global __brp_check_rpaths %{nil}
-%global _scl_prefix    /opt
-
 %{?scl:%{?scl_package:%scl_package binutils}}
 
 Summary: A GNU collection of binary utilities
 Name: php56-binutils
 Version: 2.28
-Release: 8%{?dist}.sc1
+Release: 9%{?dist}.sc1
 License: GPLv3+
 Group: Development/Tools
 URL: http://sources.redhat.com/binutils
 Source0: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-binutils-2.28-8.el7.sc1.x86_64.rpm
 Source1: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-binutils-devel-2.28-8.el7.sc1.x86_64.rpm
 BuildRequires: cpio rpm rpm-build
+BuildRequires: php56-macro
 %{?scl:BuildRequires:%scl_runtime}
 %{?scl:BuildRequires:scl-utils-build}
 
