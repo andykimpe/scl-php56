@@ -1,0 +1,1 @@
+%{_rpmconfigdir}/macros.d
