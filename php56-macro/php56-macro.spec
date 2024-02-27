@@ -9,7 +9,7 @@ Release: 1%{?dist}
 License: GPLv3+
 Group: Development/Tools
 URL: https://github.com/andykimpe/scl-php56
-Source0: macro.php56
+Source0: https://github.com/andykimpe/scl-php56/raw/master/php56-macro/macro.php56
 BuildRequires: coreutils binutils rpm rpm-build
 
 %description
