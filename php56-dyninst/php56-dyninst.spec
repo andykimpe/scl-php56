@@ -1,14 +1,10 @@
-%global debug_package %{nil}
-%global __brp_check_rpaths %{nil}
-%global _scl_prefix    /opt
-
 %{?scl:%scl_package dyninst}
 
 Summary: An API for Run-time Code Generation
 License: LGPLv2+
 Name: %{?scl_prefix}dyninst
 Group: Development/Libraries
-Release: 3%{?dist}
+Release: 4%{?dist}
 URL: http://www.dyninst.org
 Version: 9.3.2
 Exclusiveos: linux
@@ -16,6 +12,7 @@ Exclusiveos: linux
 # It has some preliminary support for aarch64 and ppc64le,
 # but we're waiting for those to be feature-complete.
 ExclusiveArch: x86_64
+BuildRequires: php56-macro
 
 Source0: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-dyninst-9.3.2-3.el7.x86_64.rpm
 Source1: https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/sclo/x86_64/rh/Packages/d/devtoolset-7-dyninst-devel-9.3.2-3.el7.x86_64.rpm
