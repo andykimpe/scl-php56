@@ -45,7 +45,6 @@ Source2:       https://github.com/andykimpe/scl-php56/raw/master/LICENSE
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: scl-utils-build
 BuildRequires: help2man
-BuildRequires: php56-macro
 # Temporary work-around
 BuildRequires: iso-codes
 BuildRequires: environment-modules
