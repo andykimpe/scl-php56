@@ -48,3 +48,4 @@ wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0011-Fix-missin
 wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0012-Introduce-scl_dependency_generators-macro.patch -O 0012-Introduce-scl_dependency_generators-macro.patch
 wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0013-Add-capability-to-share-collections-using-nfs.patch -O 0013-Add-capability-to-share-collections-using-nfs.patch
 wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl-utils-20130529-shebang.patch -O scl-utils-20130529-shebang.patch
+wget https://github.com/andykimpe/scl-utils/commit/145b6ee3ebf4ff4f0735370473c44287248128a8.patch -O 145b6ee3ebf4ff4f0735370473c44287248128a8.patch
