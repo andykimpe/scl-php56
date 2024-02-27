@@ -6,9 +6,9 @@ copr use custom build
 #bash copr-Custom.sh
 #rm -f copr-Custom.sh
 ```
-
-
-
-
+ 
+  
+ 
+ 
 ![alt text](https://raw.githubusercontent.com/andykimpe/scl-php56/master/scl-utils/Print-Screen_2024-02-27_16-14-45.png)
 
