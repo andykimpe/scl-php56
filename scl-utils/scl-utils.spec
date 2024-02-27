@@ -31,7 +31,7 @@ Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-
 %if 0%{?fedora} > 36 || 0%{?rhel} > 6
 Epoch:      1
 Version:    2.0.3
-Release:    8%{?dist}
+Release:    9%{?dist}
 Source0:	https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
 Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
 Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
@@ -78,6 +78,7 @@ Patch31:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0011-Fi
 Patch32:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0012-Introduce-scl_dependency_generators-macro.patch
 Patch33:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0013-Add-capability-to-share-collections-using-nfs.patch
 Patch34:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl-utils-20130529-shebang.patch
+Patch35:     https://github.com/andykimpe/scl-utils/commit/145b6ee3ebf4ff4f0735370473c44287248128a8.patch
 
 Summary:    Utilities for alternative packaging
 License:    GPLv2+
@@ -145,6 +146,7 @@ Essential RPM build macros for alternative packaging.
 %patch3 -p1 -b .BZ-2091000-remove-tmp-file
 %patch4 -p1 -b .rpm419
 %patch5 -p1 -b .brp-python-hardlink
+%patch35 -p1
 %endif
 
 
