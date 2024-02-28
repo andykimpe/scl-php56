@@ -157,14 +157,6 @@ BuildRequires: glibc-devel >= 2.4.90-13
 BuildRequires: elfutils-devel >= 0.147
 BuildRequires: elfutils-libelf-devel >= 0.147
 BuildRequires: libzstd-devel
-%ifarch ppc ppc64 ppc64le ppc64p7 s390 s390x sparc sparcv9 alpha
-# Make sure glibc supports TFmode long double
-BuildRequires: glibc >= 2.3.90-35
-%endif
-%ifarch %{multilib_64_archs} sparcv9 ppc
-# Ensure glibc{,-devel} is installed for both multilib arches
-BuildRequires: /lib/libc.so.6 /usr/lib/libc.so /lib64/libc.so.6 /usr/lib64/libc.so
-%endif
 %if %{build_ada}
 # Ada requires Ada to build
 BuildRequires: gcc-gnat >= 3.1, libgnat >= 3.1
