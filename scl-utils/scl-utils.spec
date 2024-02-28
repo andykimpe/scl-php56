@@ -2,19 +2,19 @@
 %global macrosdir %(d=%{_rpmconfigdir}/macros.d; [ -d $d ] || d=%{_sysconfdir}/rpm; echo $d)
 
 Name:       scl-utils
-%if 0%{?rhel} == 6
-Epoch:      1
-Version:	20120927
-Release:	31%{?dist}
-Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
-Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
-Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
-Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
-Source4:	https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
-Source5:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
-Source6:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
-Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
-%endif
+#%if 0%{?rhel} == 6
+#Epoch:      1
+#Version:	20120927
+#Release:	31%{?dist}
+#Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
+#Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
+#Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
+#Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
+#Source4:	https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
+#Source5:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
+#Source6:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
+#Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
+#%endif
 #%if 0%{?rhel} == 7
 #Epoch:      1
 #Version:	20130529
@@ -28,7 +28,7 @@ Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-
 #Source6:	hhttps://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
 #Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
 #%endif
-%if 0%{?fedora} > 36 || 0%{?rhel} > 6
+#%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 Epoch:      1
 Version:    2.0.3
 Release:    10%{?dist}
@@ -40,7 +40,7 @@ Source4:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-201
 Source5:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz
 Source6:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7
 Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7
-%endif
+#%endif
 Patch1:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0003-Scl-utils-layout-patch-from-fedora-famillecollet.com.patch
 Patch2:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/BZ-2056462-do-not-error-out-on-SIGINT.patch
 Patch3:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/BZ-2091000-remove-tmp-file.patch
@@ -105,25 +105,25 @@ Requires:   redhat-rpm-config
 Essential RPM build macros for alternative packaging.
 
 %prep
-%if 0%{?rhel} == 6
-%setup -q -n scl-utils-scl-utils-%{version}
-%patch6 -p1 -b .all-collections
-%patch7 -p1 -b .overriding
-%patch8 -p1 -b .check-asprintf
-%patch9 -p1
-%patch10 -p1 -b .direct-path
-%patch11 -p1 -b .enable-once
-%patch12 -p1 -b .command-separator
-%patch13 -p1 -b .debuginfo
-%patch14 -p1 -b .man-env
-%patch15 -p1 -b .man-command
-%patch16 -p1 -b .register
-%patch17 -p1 -b .deref
-%patch18 -p1 -b .meta-deps
-%patch19 -p1 -b .nfsmoutable
-%patch20 -p1 -b .shebang
-%patch36 -p1
-%endif
+#%if 0%{?rhel} == 6
+#%setup -q -n scl-utils-scl-utils-%{version}
+#%patch6 -p1 -b .all-collections
+#%patch7 -p1 -b .overriding
+#%patch8 -p1 -b .check-asprintf
+#%patch9 -p1
+#%patch10 -p1 -b .direct-path
+#%patch11 -p1 -b .enable-once
+#%patch12 -p1 -b .command-separator
+#%patch13 -p1 -b .debuginfo
+#%patch14 -p1 -b .man-env
+#%patch15 -p1 -b .man-command
+#%patch16 -p1 -b .register
+#%patch17 -p1 -b .deref
+#%patch18 -p1 -b .meta-deps
+#%patch19 -p1 -b .nfsmoutable
+#%patch20 -p1 -b .shebang
+#%patch36 -p1
+#%endif
 #%if 0%{?rhel} == 7
 #%setup -q -n scl-utils-scl-utils-%{version}
 #%patch21 -p1 -b .attr-names
@@ -141,7 +141,7 @@ Essential RPM build macros for alternative packaging.
 #%patch33 -p1
 #%patch34 -p1 -b .shebang
 #%endif
-%if 0%{?fedora} > 36 || 0%{?rhel} > 6
+#%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 %setup -q -n scl-utils-%{version}
 %patch1 -p1 -b .Scl-utils-layout-patch-from-fedora-famillecollet.com
 %patch2 -p1 -b .BZ-2056462-do-not-error-out-on-SIGINT
@@ -149,34 +149,34 @@ Essential RPM build macros for alternative packaging.
 %patch4 -p1 -b .rpm419
 %patch5 -p1 -b .brp-python-hardlink
 %patch35 -p1
-%endif
+#%endif
 
 
 %build
-%if 0%{?rhel} == 6
-make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
-%endif
+#%if 0%{?rhel} == 6
+#make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
+#%endif
 #%if 0%{?rhel} == 7
 #make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
 #%endif
-%if 0%{?fedora} > 36 || 0%{?rhel} > 6
+#%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 %cmake .
 make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="$RPM_LD_FLAGS"
-%endif
+#%endif
 
 %install
 
-%if 0%{?rhel} == 6
-rm -rf %buildroot
-mkdir -p %buildroot%{_sysconfdir}/rpm
-mkdir -p %buildroot%{_sysconfdir}/scl/prefixes
-mkdir -p %buildroot/opt/rh
-mkdir -p %buildroot%{_rpmconfigdir}/redhat
-install -d -m 755 %buildroot%{_mandir}/man1
-make install DESTDIR=%buildroot
-cat %SOURCE3 >> %buildroot%{_sysconfdir}/rpm/macros.scl
-install -m 755 %SOURCE2 %buildroot%{_bindir}/scl_source
-%endif
+#%if 0%{?rhel} == 6
+#rm -rf %buildroot
+#mkdir -p %buildroot%{_sysconfdir}/rpm
+#mkdir -p %buildroot%{_sysconfdir}/scl/prefixes
+#mkdir -p %buildroot/opt/rh
+#mkdir -p %buildroot%{_rpmconfigdir}/redhat
+#install -d -m 755 %buildroot%{_mandir}/man1
+#make install DESTDIR=%buildroot
+#cat %SOURCE3 >> %buildroot%{_sysconfdir}/rpm/macros.scl
+#install -m 755 %SOURCE2 %buildroot%{_bindir}/scl_source
+#%endif
 #%if 0%{?rhel} == 7
 #rm -rf %buildroot
 #mkdir -p %buildroot%{_sysconfdir}/rpm
@@ -195,7 +195,7 @@ install -m 755 %SOURCE2 %buildroot%{_bindir}/scl_source
 #  sed -i -e '/^.*brp-python-hardlink.*/d' %buildroot%{_sysconfdir}/rpm/macros.scl
 #%endif
 #%endif
-%if 0%{?fedora} > 36 || 0%{?rhel} > 6
+#%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 rm -rf %{buildroot}
 make install DESTDIR=%{buildroot}
 if [ %{macrosdir} != %{_sysconfdir}/rpm ]; then
@@ -209,37 +209,37 @@ cd %{buildroot}%{_sysconfdir}/scl
 mkdir modulefiles
 mkdir prefixes
 ln -s prefixes conf
-%endif
+#%endif
 
 
-%if 0%{?fedora} > 36 || 0%{?rhel} > 6
-%check
-make check
-%endif
+#%if 0%{?fedora} > 36 || 0%{?rhel} > 6
+#%check
+#make check
+#%endif
 
 %clean
 rm -rf %buildroot
 
 
-%if 0%{?rhel} == 6
-%files
-%defattr(-,root,root,-)
-%dir /opt/rh
-%dir %{_sysconfdir}/scl/prefixes
-%{_bindir}/scl
-%{_bindir}/scl_enabled
-%{_bindir}/scl_source
-%{_mandir}/man1/*
-%{_sysconfdir}/bash_completion.d/scl.bash
+#%if 0%{?rhel} == 6
+#%files
+#%defattr(-,root,root,-)
+#%dir /opt/rh
+#%dir %{_sysconfdir}/scl/prefixes
+#%{_bindir}/scl
+#%{_bindir}/scl_enabled
+#%{_bindir}/scl_source
+#%{_mandir}/man1/*
+#%{_sysconfdir}/bash_completion.d/scl.bash
 
-%files build
-%defattr(-,root,root,-)
-%{_sysconfdir}/rpm/macros.scl
-%{_rpmconfigdir}/scldeps.sh
-%{_rpmconfigdir}/fileattrs/scl.attr
-%{_rpmconfigdir}/brp-scl-compress
-%{_rpmconfigdir}/brp-scl-python-bytecompile
-%endif
+#%files build
+#%defattr(-,root,root,-)
+#%{_sysconfdir}/rpm/macros.scl
+#%{_rpmconfigdir}/scldeps.sh
+#%{_rpmconfigdir}/fileattrs/scl.attr
+#%{_rpmconfigdir}/brp-scl-compress
+#%{_rpmconfigdir}/brp-scl-python-bytecompile
+#%endif
 
 #%if 0%{?rhel} == 7
 #%files
@@ -263,7 +263,7 @@ rm -rf %buildroot
 #%{_rpmconfigdir}/brp-scl-python-bytecompile
 #%endif
 
-%if 0%{?fedora} > 36 || 0%{?rhel} > 6
+#%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 %files
 %dir %{_sysconfdir}/scl
 %dir %{_sysconfdir}/scl/modulefiles
@@ -286,6 +286,6 @@ rm -rf %buildroot
 %{_rpmconfigdir}/fileattrs/sclbuild.attr
 %{_rpmconfigdir}/brp-scl-compress
 %{_rpmconfigdir}/brp-scl-python-bytecompile
-%endif
+#%endif
 
 %changelog
