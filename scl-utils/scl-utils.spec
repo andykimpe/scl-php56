@@ -5,7 +5,7 @@ Name:       scl-utils
 %if 0%{?rhel} == 6
 Epoch:      1
 Version:	20120927
-Release:	30%{?dist}
+Release:	31%{?dist}
 Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
 Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
 Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
@@ -31,7 +31,7 @@ Source7:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-
 %if 0%{?fedora} > 36 || 0%{?rhel} > 6
 Epoch:      1
 Version:    2.0.3
-Release:    9%{?dist}
+Release:    10%{?dist}
 Source0:	https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
 Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
 Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
@@ -79,6 +79,7 @@ Patch32:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0012-In
 Patch33:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0013-Add-capability-to-share-collections-using-nfs.patch
 Patch34:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl-utils-20130529-shebang.patch
 Patch35:     https://github.com/andykimpe/scl-utils/commit/145b6ee3ebf4ff4f0735370473c44287248128a8.patch
+Patch36:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/e748fab3101febd7673e2ca41122873a35641e62.patch
 
 Summary:    Utilities for alternative packaging
 License:    GPLv2+
@@ -121,6 +122,7 @@ Essential RPM build macros for alternative packaging.
 %patch18 -p1 -b .meta-deps
 %patch19 -p1 -b .nfsmoutable
 %patch20 -p1 -b .shebang
+%patch36 -p1
 %endif
 #%if 0%{?rhel} == 7
 #%setup -q -n scl-utils-scl-utils-%{version}
