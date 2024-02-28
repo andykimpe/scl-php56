@@ -31,7 +31,7 @@ Name:       scl-utils
 #%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 Epoch:      1
 Version:    2.0.3
-Release:    10%{?dist}
+Release:    11%{?dist}
 Source0:	https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
 Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
 Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
