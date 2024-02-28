@@ -1,0 +1,22 @@
+From e748fab3101febd7673e2ca41122873a35641e62 Mon Sep 17 00:00:00 2001
+From: Kimpe Andy <andykimpe@gmail.com>
+Date: Wed, 28 Feb 2024 20:56:23 +0100
+Subject: [PATCH] Update macros.scl
+
+---
+ macros.scl | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/macros.scl b/macros.scl
+index a0e9ff1..2be180d 100644
+--- a/macros.scl
++++ b/macros.scl
+@@ -8,7 +8,7 @@
+ %global scl_name		%{scl}
+ %global scl_prefix		%{scl}-
+ %global scl_runtime		%{scl}-runtime
+-%{!?_scl_prefix:		%global _scl_prefix /opt/rh}
++%{!?_scl_prefix:		%global _scl_prefix /opt}
+ %global _scl_scripts		%{_scl_prefix}/%{scl}
+ %global _scl_root		%{_scl_prefix}/%{scl}/root
+ %global _root_prefix		%{_prefix}
