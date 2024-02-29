@@ -3,9 +3,9 @@
 
 Name:       scl-utils
 Epoch:      1
-Version:    2.0.3
-Release:    12%{?dist}
-Source0:	https://github.com/sclorg/scl-utils/archive/refs/tags/scl-utils-2.0.3.tar.gz
+Version:    2.0.4
+Release:    1%{?dist}
+Source0:	https://github.com/andykimpe/scl-utils/archive/refs/tags/2.0.4.tar.gz#/scl-utils-2.0.4.tar.gz
 Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
 Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
 Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
@@ -49,6 +49,8 @@ Requires:   redhat-rpm-config
 Essential RPM build macros for alternative packaging.
 
 %prep
+#%if 0%{?fedora} > 36 || 0%{?rhel} > 6
+%setup -q -n scl-utils-%{version}
 %if 0%{?rhel} == 6
 %patch7 -p1
 #%setup -q -n scl-utils-scl-utils-%{version}
@@ -69,14 +71,12 @@ Essential RPM build macros for alternative packaging.
 #%patch20 -p1 -b .shebang
 #%patch36 -p1
 %endif
-#%if 0%{?fedora} > 36 || 0%{?rhel} > 6
-%setup -q -n scl-utils-%{version}
-%patch1 -p1 -b .Scl-utils-layout-patch-from-fedora-famillecollet.com
-%patch2 -p1 -b .BZ-2056462-do-not-error-out-on-SIGINT
-%patch3 -p1 -b .BZ-2091000-remove-tmp-file
-%patch4 -p1 -b .rpm419
-%patch5 -p1 -b .brp-python-hardlink
-%patch6 -p1
+#%patch1 -p1 -b .Scl-utils-layout-patch-from-fedora-famillecollet.com
+#%patch2 -p1 -b .BZ-2056462-do-not-error-out-on-SIGINT
+#%patch3 -p1 -b .BZ-2091000-remove-tmp-file
+#%patch4 -p1 -b .rpm419
+#%patch5 -p1 -b .brp-python-hardlink
+#%patch6 -p1
 #%endif
 
 
