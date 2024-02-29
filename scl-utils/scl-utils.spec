@@ -75,10 +75,10 @@ URL:        https://github.com/sclorg/scl-utils
 BuildRequires:	gcc make
 BuildRequires:  cmake
 BuildRequires:  rpm-devel
-#%if 0%{?fedora} > 36 || 0%{?rhel} > 6
+%if 0%{?fedora} > 36 || 0%{?rhel} > 6
 BuildRequires:  libcmocka libcmocka-devel environment-modules
 Requires:   %{_bindir}/modulecmd
-#%endif
+%endif
 
 %description
 Run-time utility for alternative packaging.
