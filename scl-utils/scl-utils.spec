@@ -6,7 +6,7 @@ Name:       scl-utils
 Epoch:      1
 Version:	20120927
 Release:	31%{?dist}
-Source0:	https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz
+Source0:	https://github.com/andykimpe/scl-utils/archive/refs/tags/20120927.tar.gz#/scl-utils-20120927.tar.gz
 Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
 Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
 Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
@@ -51,22 +51,8 @@ Patch17:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0012-Fi
 Patch18:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0013-Fixed_main_metapackage_dependencies.patch
 Patch19:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0014-Add-capability-to-share-collections-using-nfs.patch
 Patch20:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl-utils-20120927-shebang.patch
-#Patch21:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0001-Rename-attr-macros-so-they-are-correctly-named.patch
-#Patch22:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0002-Implement-as-a-command-separator.patch
-#Patch23:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0003-Mention-environment-modifying-commands-in-the-man-pa.patch
-#Patch24:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0004-Check-whether-a-file-was-created-when-doing-mkstemp-.patch
-#Patch25:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0005-Various-fixes-in-Provides-and-Requires-of-scl-packag.patch
-#Patch26:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0006-Modified-the-behavior-of-debuginfo-generation-proces.patch
-#Patch27:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0007-Changed-command-description-in-scl-man-pages.patch
-#Patch28:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0008-Changed-script-paths-in-__os_install_post.patch
-#Patch29:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0009-Remove-sclbuild-as-it-s-not-that-useful.patch
-#Patch30:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0010-Added-capability-to-register-and-deregister-collecti.patch
-#Patch31:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0011-Fix-missing-allocation-check-in-read_script_output.patch
-#Patch32:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0012-Introduce-scl_dependency_generators-macro.patch
-#Patch33:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0013-Add-capability-to-share-collections-using-nfs.patch
-#Patch34:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl-utils-20130529-shebang.patch
-Patch35:     https://github.com/andykimpe/scl-utils/commit/145b6ee3ebf4ff4f0735370473c44287248128a8.patch
-Patch36:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/e748fab3101febd7673e2ca41122873a35641e62.patch
+Patch21:     https://github.com/andykimpe/scl-utils/commit/145b6ee3ebf4ff4f0735370473c44287248128a8.patch
+Patch22:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/e748fab3101febd7673e2ca41122873a35641e62.patch
 
 Summary:    Utilities for alternative packaging
 License:    GPLv2+
@@ -109,7 +95,7 @@ Essential RPM build macros for alternative packaging.
 %patch18 -p1 -b .meta-deps
 %patch19 -p1 -b .nfsmoutable
 %patch20 -p1 -b .shebang
-%patch36 -p1
+%patch22 -p1
 %endif
 %if 0%{?fedora} > 36 || 0%{?rhel} > 6
 %setup -q -n scl-utils-%{version}
@@ -118,7 +104,7 @@ Essential RPM build macros for alternative packaging.
 %patch3 -p1 -b .BZ-2091000-remove-tmp-file
 %patch4 -p1 -b .rpm419
 %patch5 -p1 -b .brp-python-hardlink
-%patch35 -p1
+%patch21 -p1
 %endif
 
 
