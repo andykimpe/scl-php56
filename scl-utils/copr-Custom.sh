@@ -7,7 +7,7 @@ wget https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz -O
 wget https://raw.githubusercontent.com/andykimpe/scl-php56/master/scl-utils/macros.scl-filesystem -O macros.scl-filesystem
 wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source -O scl_source
 wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6 -O macros.scl-filesystem.el6
-wget https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20120927.tar.gz -O scl-utils-20120927.tar.gz
+wget https://github.com/andykimpe/scl-utils/archive/refs/tags/20120927.tar.gz -O scl-utils-20120927.tar.gz
 wget https://github.com/andykimpe/scl-utils/archive/refs/heads/scl-utils-20130529.tar.gz -O scl-utils-20130529.tar.gz
 wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source.el7 -O scl_source.el7
 wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el7 -O macros.scl-filesystem.el7
