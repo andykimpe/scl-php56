@@ -50,7 +50,7 @@ Essential RPM build macros for alternative packaging.
 
 %prep
 %if 0%{?rhel} == 6
-patch7 -p1
+%patch7 -p1
 #%setup -q -n scl-utils-scl-utils-%{version}
 #%patch6 -p1 -b .all-collections
 #%patch7 -p1 -b .overriding
