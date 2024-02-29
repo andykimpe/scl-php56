@@ -46,3 +46,4 @@ wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0012-Introduce-
 wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0013-Add-capability-to-share-collections-using-nfs.patch -O 0013-Add-capability-to-share-collections-using-nfs.patch
 wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl-utils-20130529-shebang.patch -O scl-utils-20130529-shebang.patch
 wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/145b6ee3ebf4ff4f0735370473c44287248128a8.patch -O 145b6ee3ebf4ff4f0735370473c44287248128a8.patch
+wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/for-el6-issues-9.patch -O for-el6-issues-9.patch
