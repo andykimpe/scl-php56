@@ -1,6 +1,6 @@
-From 5543551d5aa77e63e3063d2717712fd2a1152210 Mon Sep 17 00:00:00 2001
+From 5df435de29c11ffa2ec5596f37163b7c35aadf3c Mon Sep 17 00:00:00 2001
 From: Kimpe Andy <andykimpe@gmail.com>
-Date: Thu, 29 Feb 2024 02:38:11 +0100
+Date: Thu, 29 Feb 2024 03:56:43 +0100
 Subject: [PATCH] Update scllib.c
 
 ---
@@ -8,10 +8,10 @@ Subject: [PATCH] Update scllib.c
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/src/scllib.c b/src/scllib.c
-index a182194..136a803 100644
+index 2ba8df8..43a38d8 100644
 --- a/src/scllib.c
 +++ b/src/scllib.c
-@@ -390,7 +390,7 @@ scl_rc list_packages_in_collection(const char *colname, char ***_pkgnames)
+@@ -393,7 +393,7 @@ scl_rc list_packages_in_collection(const char *colname, char ***_pkgnames)
      xasprintf(&provide, "scl-package(%s)", colname);
  
      ts = rpmtsCreate();
@@ -20,7 +20,7 @@ index a182194..136a803 100644
      while ((h = rpmdbNextIterator(mi)) != NULL) {
  
          srpms[srpms_count++] = headerGetAsString(h, RPMTAG_SOURCERPM);
-@@ -572,7 +572,7 @@ static scl_rc owned_by_package(const char *file_path, bool *_owned)
+@@ -575,7 +575,7 @@ static scl_rc owned_by_package(const char *file_path, bool *_owned)
      }
  
      ts = rpmtsCreate();
@@ -28,3 +28,4 @@ index a182194..136a803 100644
 +    mi = rpmtsInitIterator(ts, RPMTAG_FILENAMES, file_path, 0);
  
      *_owned = rpmdbGetIteratorCount(mi) > 0;
+ 
