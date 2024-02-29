@@ -22,7 +22,7 @@ Patch4:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/rpm419.p
 # patch
 # https://patch-diff.githubusercontent.com/raw/sclorg/scl-utils/pull/43.patch
 Patch5:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/brp-python-hardlink.patch
-Patch6:     https://github.com/andykimpe/scl-utils/commit/145b6ee3ebf4ff4f0735370473c44287248128a8.patch
+Patch6:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/145b6ee3ebf4ff4f0735370473c44287248128a8.patch
 Patch7:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/for-el6-issues-9.patch
 
 Summary:    Utilities for alternative packaging
