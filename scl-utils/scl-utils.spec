@@ -5,7 +5,7 @@ Name:       scl-utils
 Epoch:      1
 Version:    2.0.3
 Release:    12%{?dist}
-Source0:	https://github.com/sclorg/scl-utils/archive/2.0.3/scl-utils-2.0.3.tar.gz
+Source0:	https://github.com/sclorg/scl-utils/archive/refs/tags/scl-utils-2.0.3.tar.gz
 Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
 Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
 Source3:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6
