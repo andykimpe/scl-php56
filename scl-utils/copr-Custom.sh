@@ -3,7 +3,7 @@
 #bash copr-Custom.sh
 #rm -f copr-Custom.sh
 wget https://raw.githubusercontent.com/andykimpe/scl-php56/master/scl-utils/scl-utils.spec -O scl-utils.spec
-wget https://github.com/sclorg/scl-utils/archive/refs/tags/scl-utils-2.0.3.tar.gz -O scl-utils-2.0.3.tar.gz
+wget https://github.com/sclorg/scl-utils/archive/refs/tags/2.0.3.tar.gz -O scl-utils-2.0.3.tar.gz
 wget https://raw.githubusercontent.com/andykimpe/scl-php56/master/scl-utils/macros.scl-filesystem -O macros.scl-filesystem
 wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source -O scl_source
 wget https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem.el6 -O macros.scl-filesystem.el6
