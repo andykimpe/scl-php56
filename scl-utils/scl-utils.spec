@@ -94,7 +94,7 @@ Essential RPM build macros for alternative packaging.
 %patch16 -p1 -b .register
 %patch17 -p1 -b .deref
 ####%#patch18 -p1 -b .meta-deps
-%patch19 -p1 -b .nfsmoutable
+####%#patch19 -p1 -b .nfsmoutable
 %patch20 -p1 -b .shebang
 %patch22 -p1
 %patch23 -p1
