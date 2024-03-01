@@ -53,6 +53,7 @@ Patch19:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/0014-Ad
 Patch20:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl-utils-20120927-shebang.patch
 Patch21:     https://github.com/andykimpe/scl-utils/commit/145b6ee3ebf4ff4f0735370473c44287248128a8.patch
 Patch22:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/e748fab3101febd7673e2ca41122873a35641e62.patch
+Patch23:     https://github.com/andykimpe/scl-php56/raw/master/scl-utils/aafd483c3b2a0392da54bb21833089a89bbc90ae.patch
 
 Summary:    Utilities for alternative packaging
 License:    GPLv2+
@@ -96,6 +97,7 @@ Essential RPM build macros for alternative packaging.
 %patch19 -p1 -b .nfsmoutable
 %patch20 -p1 -b .shebang
 %patch22 -p1
+%patch23 -p1
 %endif
 %if 0%{?fedora} > 36 || 0%{?rhel} > 6
 %setup -q -n scl-utils-%{version}
