@@ -82,7 +82,7 @@ Essential RPM build macros for alternative packaging.
 %if 0%{?rhel} == 6
 %setup -q -n scl-utils-%{version}
 %patch6 -p1 -b .all-collections
-%patch7 -p1 -b .overriding
+#%patch7 -p1 -b .overriding
 %patch8 -p1 -b .check-asprintf
 %patch9 -p1
 %patch10 -p1 -b .direct-path
