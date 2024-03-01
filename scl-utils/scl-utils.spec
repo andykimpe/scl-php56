@@ -5,7 +5,7 @@ Name:       scl-utils
 %if 0%{?rhel} == 6
 Epoch:      1
 Version:	20120927
-Release:	31%{?dist}
+Release:	32%{?dist}
 Source0:	https://github.com/andykimpe/scl-utils/archive/refs/tags/20120927.tar.gz#/scl-utils-20120927.tar.gz
 Source1:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/macros.scl-filesystem
 Source2:	https://github.com/andykimpe/scl-php56/raw/master/scl-utils/scl_source
